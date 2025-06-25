@@ -116,9 +116,9 @@ window.addEventListener("DOMContentLoaded", () => {
     if (i < fullText.length) {
       quote.textContent += fullText.charAt(i);
       i++;
-      setTimeout(typeWriter, 30); // tốc độ gõ
+      setTimeout(typeWriter, 30);
     }
   }
 
-  setTimeout(typeWriter, 1000); // delay lúc load trang
+  setTimeout(typeWriter, 1000);
 });

@@ -21,6 +21,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 55px;
   padding: 12px 24px;
   background: #0b0d14;
   display: flex;
@@ -66,18 +67,19 @@ body {
   cursor: pointer;
 }
 
-/* ====== Hero Section ====== */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 160px; /* đúng bằng hoặc lớn hơn chiều cao header */
+  padding-bottom: 40px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 20px 40px;
-  text-align: center;
   flex-direction: column;
-  gap: 16px;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
 }
+
 
 .hero img {
   width: 140px;
@@ -86,63 +88,54 @@ body {
   border-radius: 50%;
   border: 4px solid #00bcd4;
   box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+  margin-bottom: 20px;
   animation: fadeIn 0.8s ease-in-out;
 }
 
 .hero-content {
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+
+.hero-content h1, .hero-content h2, .location {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-in-out forwards;
 }
 
 .hero-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #6a67ff;
-  animation: fadeInUp 0.6s ease-in-out forwards;
   animation-delay: 0.5s;
-  opacity: 0;
 }
+
 .hero-content h2 {
-  font-size: 1.5rem;
-  color: #ccc;
-  animation: fadeInUp 0.6s ease-in-out forwards;
   animation-delay: 0.8s;
-  opacity: 0;
 }
+
 .hero-content .location {
-  font-size: 1rem;
-  color: #aaa;
-  gap: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: fadeInUp 0.6s ease-in-out forwards;
   animation-delay: 1.1s;
-  opacity: 0;
 }
 
 #intro-quote {
-  padding-left: 16px;
-  color: #bbb;
-  font-size: 1.1rem;
   font-style: italic;
-  margin: 1rem auto;
+  font-size: 1.1rem;
+  color: #bbb;
   max-width: 600px;
-  white-space: normal;
+  white-space: nowrap;
   overflow: hidden;
+  padding-left: 16px;
+  margin: 16px auto 0;
+  animation: typing 3.6s steps(80, end) forwards;
+  animation-delay: 1.4s;
+  border-left: none;
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes typeIn {
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  100% {
-    width: 100%;
-    opacity: 1;
-  }
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 .cta-btn {
@@ -153,11 +146,12 @@ body {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
-  margin-top: 20px;
   opacity: 0;
   animation: fadeInUp 0.6s ease-in-out forwards;
-  animation-delay: 4.5s;
+  animation-delay: 5s;
+  margin-top: 24px;
 }
+
 .cta-btn:hover {
   opacity: 0.9;
 }
@@ -717,7 +711,7 @@ body.light-mode .nav a {
 
 body.light-mode .nav a.contact-btn {
   background-color: #f9fafb;
-  border: 1px solid #10347d;
+  border: 1px solid #1f51b4;
 }
 body.light-mode .nav a.active {
   color: #3b82f6;
