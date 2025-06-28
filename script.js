@@ -73,7 +73,6 @@ document.querySelectorAll("section").forEach(section => {
 // Slide in for about-text and about-interests
 const aboutText = document.querySelector('.about-text');
 const aboutInterests = document.querySelector('.about-interests');
-
 const aboutObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {

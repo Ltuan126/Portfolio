@@ -19,10 +19,17 @@
       <nav class="nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#goals">Career Goals</a>
+        <a href="#skill">Skills</a>
         <a href="#project">Projects</a>
         <a href="#contact" class="contact-btn">Contact</a>
+        <a href="./assets/TuanNguyen-CV.pdf" download class="download-btn">
+          <i class="fas fa-download"></i> Download CV
+        </a>
       </nav>
-      <button id="toggle-theme" class="dark-toggle">🌓</button>
+      <button id="toggle-theme" class="dark-toggle">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
     </header>
 
     <section id="home" class="section-dark hero">
@@ -46,54 +53,46 @@
         </div>
       </div>
     </section>
-
     <section id="about" class="section-dark">
       <div class="section-container">
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">Introduce</h2>
         <div class="about-wrapper">
+          <!-- WHO I AM -->
           <div class="about-text">
-            <p>
-              I am a full-stack developer with a strong desire to grow
-              professionally in building modern web applications. While my
-              hands-on experience is still limited, I actively pursue new
-              technologies—especially modern JavaScript frameworks—and
-              continuously strive to adopt efficient, flexible software
-              development practices.
-            </p>
-            <p>
-              I dedicate time to exploring emerging technologies, contributing
-              to open-source projects, and enhancing my skills through technical
-              writing and mentoring junior developers. My goal is to
-              continuously improve and become a valuable contributor to
-              high-quality, practical software projects.
-            </p>
-          </div>
-          <div class="about-interests">
-            <h3>Interests & Passions</h3>
-            <div class="interests-grid">
-              <div class="interest-item delay-100">
-                <i class="fas fa-laptop-code"></i> Web Development
+            <h2 class="intro-heading">About Me</h2>
+            <div class="whoami-grid">
+              <div class="whoami-item">
+                <i class="fas fa-user"></i> Nguyen Le Tuan
               </div>
-              <div class="interest-item delay-200">
+              <div class="whoami-item">
+                <i class="fas fa-calendar-alt"></i> Born: 06/12/2005
+              </div>
+              <div class="whoami-item">
+                <i class="fas fa-graduation-cap"></i> Education: University of
+                Transport
+              </div>
+              <div class="whoami-item">
+                <i class="fas fa-address-card"></i> Address: Phu Nhuan district,
+                Ho Chi Minh City, Vietnam
+              </div>
+            </div>
+          </div>
+
+          <!-- INTERESTS -->
+          <div class="about-interests">
+            <h2 class="intro-heading">Interests</h2>
+            <div class="interests-grid">
+              <div class="interest-item">
+                <i class="fas fa-laptop-code"></i> Web Developer
+              </div>
+              <div class="interest-item">
                 <i class="fas fa-rocket"></i> Open Source
               </div>
-              <div class="interest-item delay-300">
-                <i class="fas fa-camera"></i> Photography
-              </div>
-              <div class="interest-item delay-400">
-                <i class="fas fa-plane"></i> Travel
-              </div>
-              <div class="interest-item delay-500">
+              <div class="interest-item">
                 <i class="fas fa-music"></i> Music
               </div>
-              <div class="interest-item delay-600">
+              <div class="interest-item">
                 <i class="fas fa-gamepad"></i> Gaming
-              </div>
-              <div class="interest-item delay-700">
-                <i class="fas fa-book"></i> Reading
-              </div>
-              <div class="interest-item delay-800">
-                <i class="fas fa-bicycle"></i> Cycling
               </div>
             </div>
           </div>
@@ -101,6 +100,35 @@
       </div>
     </section>
 
+    <section id="goals" class="Career-Goals">
+      <div class="section-container">
+        <h2 class="section-title">Career Goals</h2>
+        <p>
+          "I aspire to become a leading expert in web development, specializing
+          in creating innovative solutions that enhance user experiences. My
+          goal is to work with forward-thinking companies that value creativity
+          and collaboration."
+        </p>
+        <div class="goals-list">
+          <ul>
+            <li>
+              Master full-stack development with a focus on React and Node.js.
+            </li>
+            <li>Contribute to open-source projects and communities.</li>
+            <li>
+              Lead development teams to deliver high-quality software solutions.
+            </li>
+            <li>
+              Continuously learn and adapt to new technologies and trends.
+            </li>
+            <li>
+              Mentor junior developers and foster a culture of knowledge
+              sharing.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
     <section id="skill" class="section-dark">
       <div class="section-container">
         <h2 class="section-title">Skills & Expertise</h2>
@@ -242,30 +270,65 @@
       </div>
     </section>
 
+    <section id="certificates" class="section-dark">
+      <div class="section-container">
+        <h2 class="section-title">Certificates</h2>
+        <div class="certificates-grid">
+          <div class="certificate-item placeholder">
+            <i class="fas fa-file-alt"></i>
+            <h3>Uncertified</h3>
+            <p>Certificates will be added soon. Stay tuned!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section-dark">
       <div class="section-container">
-        <div class="contact-box">
-          <h2 class="section-title">Contact</h2>
-          <div class="contact-wrapper">
-            <div class="contact-column">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-modern-grid">
+          <!-- Info Section -->
+          <div class="contact-modern-info">
+            <p>
+              <i class="fas fa-envelope"></i>
               <a href="mailto:tuanlenguyen612@gmail.com"
-                ><i class="fas fa-envelope"></i> tuanlenguyen612@gmail.com</a
+                >tuanlenguyen612@gmail.com</a
               >
-              <a href="tel:+84708573967"
-                ><i class="fas fa-phone"></i> +84 0708573967</a
-              >
-            </div>
-            <div class="contact-column">
-              <a href="https://github.com/Ltuan126" target="_blank"
-                ><i class="fab fa-github"></i> GitHub</a
-              >
+            </p>
+            <p>
+              <i class="fas fa-phone"></i>
+              <a href="tel:+84708573967">+84 0708573967</a>
+            </p>
+
+            <div class="contact-socials">
               <a
-                href="https://www.linkedin.com/in/tuấn-nguyễn-lê-b97978345/"
+                href="https://www.facebook.com/share/16fx69rTfP/"
                 target="_blank"
-                ><i class="fab fa-linkedin"></i> LinkedIn</a
-              >
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/nlt_yqw?igsh=MXhwdGU0bndhbmJpdQ=="
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://github.com/Ltuan126" target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-l%C3%AA-b97978345/"
+                target="_blank"
+                ><i class="fab fa-linkedin"></i
+              ></a>
             </div>
           </div>
+
+          <!-- Form Section -->
+          <form class="contact-modern-form">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
         </div>
       </div>
     </section>
