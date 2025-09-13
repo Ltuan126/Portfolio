@@ -12,6 +12,12 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+    <!-- Scroll To Top Button -->
+    <button id="scrollToTopBtn" title="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
     <header class="header">
       <div class="logo">
         <img src="./images/Tlogo.png" alt="T Logo" id="site-logo" />
@@ -53,46 +59,39 @@
         </div>
       </div>
     </section>
-    <section id="about" class="section-dark">
+    <section id="about" class="section-dark about-section">
       <div class="section-container">
         <h2 class="section-title">Introduce</h2>
-        <div class="about-wrapper">
-          <!-- WHO I AM -->
-          <div class="about-text">
-            <h2 class="intro-heading">About Me</h2>
-            <div class="whoami-grid">
-              <div class="whoami-item">
-                <i class="fas fa-user"></i> Nguyen Le Tuan
-              </div>
-              <div class="whoami-item">
-                <i class="fas fa-calendar-alt"></i> Born: 06/12/2005
-              </div>
-              <div class="whoami-item">
-                <i class="fas fa-graduation-cap"></i> Education: University of
-                Transport
-              </div>
-              <div class="whoami-item">
-                <i class="fas fa-address-card"></i> Address: Phu Nhuan district,
-                Ho Chi Minh City, Vietnam
-              </div>
-            </div>
+        <div class="about-grid">
+          <div class="about-left fade-intro">
+            <p class="about-bio">
+              I’m a passionate <strong>Full‑Stack Developer</strong> who loves building clean, fast and maintainable web applications. I focus on delivering delightful user experiences while keeping performance and scalability in mind.
+            </p>
+            <ul class="about-info-list">
+              <li><i class="fas fa-user"></i><span>Nguyen Le Tuan</span></li>
+              <li><i class="fas fa-calendar-alt"></i><span>Born: 06/12/2005</span></li>
+              <li><i class="fas fa-graduation-cap"></i><span>University of Transport</span></li>
+              <li><i class="fas fa-location-dot"></i><span>Phu Nhuan District, Ho Chi Minh City, Vietnam</span></li>
+            </ul>
           </div>
-
-          <!-- INTERESTS -->
-          <div class="about-interests">
-            <h2 class="intro-heading">Interests</h2>
-            <div class="interests-grid">
-              <div class="interest-item">
-                <i class="fas fa-laptop-code"></i> Web Developer
+          <div class="about-right fade-intro delay-100">
+            <h3 class="about-interests-heading">Interests</h3>
+            <div class="interests-grid-new">
+              <div class="interest-tile tile-web">
+                <div class="icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                <p>Web Dev</p>
               </div>
-              <div class="interest-item">
-                <i class="fas fa-rocket"></i> Open Source
+              <div class="interest-tile tile-oss">
+                <div class="icon-wrap"><i class="fas fa-rocket"></i></div>
+                <p>Open Source</p>
               </div>
-              <div class="interest-item">
-                <i class="fas fa-music"></i> Music
+              <div class="interest-tile tile-music">
+                <div class="icon-wrap"><i class="fas fa-music"></i></div>
+                <p>Music</p>
               </div>
-              <div class="interest-item">
-                <i class="fas fa-gamepad"></i> Gaming
+              <div class="interest-tile tile-game">
+                <div class="icon-wrap"><i class="fas fa-gamepad"></i></div>
+                <p>Gaming</p>
               </div>
             </div>
           </div>

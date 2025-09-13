@@ -1,3 +1,15 @@
+// ===== Scroll To Top Button =====
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollToTopBtn.style.display = 'block';
+  } else {
+    scrollToTopBtn.style.display = 'none';
+  }
+});
+scrollToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 // Smooth scrolling for nav links
 const navLinks = document.querySelectorAll('.nav a[href^="#"]');
 navLinks.forEach(link => {
@@ -70,25 +82,26 @@ document.querySelectorAll("section").forEach(section => {
   observer.observe(section);
 });
 
-// Slide in for about-text and about-interests
+// Slide in (legacy selectors) — safe guard when elements are removed
 const aboutText = document.querySelector('.about-text');
 const aboutInterests = document.querySelector('.about-interests');
-const aboutObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      if (entry.target.classList.contains('about-text')) {
-        entry.target.classList.add('slide-left', 'delay-100');
-      } else if (entry.target.classList.contains('about-interests')) {
-        setTimeout(() => {
-          entry.target.classList.add('slide-right', 'delay-200');
-        }, 100);
+if (aboutText || aboutInterests) {
+  const aboutObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('about-text')) {
+          entry.target.classList.add('slide-left', 'delay-100');
+        } else if (entry.target.classList.contains('about-interests')) {
+          setTimeout(() => {
+            entry.target.classList.add('slide-right', 'delay-200');
+          }, 100);
+        }
       }
-    }
-  });
-}, { threshold: 0.3 });
-
-aboutObserver.observe(aboutText);
-aboutObserver.observe(aboutInterests);
+    });
+  }, { threshold: 0.3 });
+  if (aboutText) aboutObserver.observe(aboutText);
+  if (aboutInterests) aboutObserver.observe(aboutInterests);
+}
 
 // Staggered skill-item animation when scrolling to skill section
 const skillItems = document.querySelectorAll('.skill-item');
@@ -106,18 +119,28 @@ skillItems.forEach(item => {
 
 window.addEventListener("DOMContentLoaded", () => {
   const quote = document.getElementById("intro-quote");
-  const fullText =
-    `"Being a developer isn’t about knowing everything—it’s about learning quickly, adapting constantly, and delivering with purpose."`;
-  quote.textContent = "";
+  if (!quote) return;
+  const fullText = '"Being a developer isn’t about knowing everything—it’s about learning quickly, adapting constantly, and delivering with purpose."';
+  quote.textContent = '';
+  quote.classList.add('typing');
   let i = 0;
-
-  function typeWriter() {
+  const speed = 28;
+  (function typeWriter(){
     if (i < fullText.length) {
-      quote.textContent += fullText.charAt(i);
-      i++;
-      setTimeout(typeWriter, 30);
+      quote.textContent += fullText[i++];
+      setTimeout(typeWriter, speed);
+    } else {
+      quote.classList.remove('typing');
+      quote.classList.add('done');
     }
-  }
+  })();
+});
 
-  setTimeout(typeWriter, 1000);
+// ===== Scroll Progress Bar Effect =====
+window.addEventListener('scroll', () => {
+  const scrollProgress = document.getElementById('scroll-progress');
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrolled = (scrollTop / docHeight) * 100;
+  scrollProgress.style.width = scrolled + '%';
 });
