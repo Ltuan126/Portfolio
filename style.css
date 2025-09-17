@@ -267,6 +267,57 @@ body.light-mode #scroll-progress {
   cursor: pointer;
 }
 
+/* ====== Mobile Nav Toggle ====== */
+.nav-toggle {
+  display: none;
+  background: #1a1c23;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  width: 42px; height: 42px;
+  align-items: center; justify-content: center;
+  margin-right: 12px;
+}
+body.light-mode .nav-toggle { background:#f3f4f6; color:#111; border-color:#e5e7eb; }
+
+@media (max-width: 900px) {
+  .nav-toggle { display: inline-flex; }
+  .nav {
+    position: absolute;
+    top: 60px; right: 12px; left: 12px;
+    background: #0b0d14;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 10px 12px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+  }
+  body.light-mode .nav { background:#ffffff; border-color:#e5e7eb; }
+  .nav.open { display: flex; }
+  .nav a { margin: 6px 6px; padding: 10px 12px; border-radius: 8px; }
+  .contact-btn, .download-btn { width: 100%; text-align: center; }
+  .header { padding: 10px 12px; }
+}
+
+/* ====== Responsive layout tweaks ====== */
+@media (max-width: 900px) {
+  .section-container { padding: 0 16px; }
+  .hero { padding-top: 140px; }
+  .skills-section { padding: 20px 0; }
+  .skill-bars { grid-template-columns: 1fr; gap: 16px; }
+  .project-grid { gap: 1.25rem; }
+  .project-card { min-height: 0; }
+}
+
+@media (max-width: 600px) {
+  .hero img { width: 120px; height: 120px; }
+  .section-title { font-size: 1.6rem; margin-bottom: 28px; }
+  .soft-skills span { font-size: 0.95rem; }
+  .project-img { height: 150px; }
+  #scrollToTopBtn { bottom: 20px; right: 20px; }
+}
+
 .hero {
   min-height: 100vh;
   padding-top: 180px; /* đúng bằng hoặc lớn hơn chiều cao header */

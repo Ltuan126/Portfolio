@@ -22,6 +22,25 @@ navLinks.forEach(link => {
   });
 });
 
+// Mobile nav toggle
+const navToggle = document.getElementById('nav-toggle');
+const primaryNav = document.getElementById('primary-nav');
+if (navToggle && primaryNav) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = primaryNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  // Close after clicking a link
+  primaryNav.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', () => {
+      if (primaryNav.classList.contains('open')) {
+        primaryNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+}
+
 // Highlight active nav link on scroll
 window.addEventListener('scroll', () => {
   const sections = document.querySelectorAll('section');
