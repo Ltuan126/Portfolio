@@ -6,7 +6,7 @@ window.addEventListener('scroll', () => {
   } else {
     scrollToTopBtn.style.display = 'none';
   }
-});
+}, { passive: true });
 scrollToTopBtn.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
@@ -37,7 +37,7 @@ window.addEventListener('scroll', () => {
       if (navLink) navLink.classList.add('active');
     }
   });
-});
+}, { passive: true });
 
 // === Theme toggle + Logo swap + Section class toggle ===
 const toggleBtn = document.getElementById('toggle-theme');
@@ -137,10 +137,23 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // ===== Scroll Progress Bar Effect =====
-window.addEventListener('scroll', () => {
+// Throttle scroll progress with rAF
+(() => {
   const scrollProgress = document.getElementById('scroll-progress');
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-  scrollProgress.style.width = scrolled + '%';
-});
+  if (!scrollProgress) return;
+  let ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        scrollProgress.style.width = scrolled + '%';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();

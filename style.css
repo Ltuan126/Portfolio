@@ -160,6 +160,17 @@ body {
   text-align: center;
 }
 
+/* Performance: avoid painting off-screen sections */
+section { content-visibility: auto; contain-intrinsic-size: 1px 1000px; }
+img { image-rendering: auto; font-style: italic; }
+img[loading="lazy"] { inline-size: auto; }
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html:focus-within { scroll-behavior: auto; }
+}
+
 /* ===== Scroll Progress Bar ===== */
 #scroll-progress {
   position: fixed;

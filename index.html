@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tuan Nguyen - Portfolio</title>
+    <meta name="description" content="Tuan Nguyen - Full-Stack Developer Portfolio: projects, skills, contact, and career goals." />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="preload" as="image" href="./images/Tuan.jpg" fetchpriority="high">
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -33,7 +37,7 @@
           <i class="fas fa-download"></i> Download CV
         </a>
       </nav>
-      <button id="toggle-theme" class="dark-toggle">
+      <button id="toggle-theme" class="dark-toggle" aria-label="Toggle light/dark theme">
         <i class="fa-solid fa-circle-half-stroke"></i>
       </button>
     </header>
@@ -44,6 +48,8 @@
           src="./images/Tuan.jpg"
           alt="Tuan Nguyen"
           class="hero-item delay-100"
+          width="140" height="140"
+          fetchpriority="high" decoding="async"
         />
         <div class="hero-content">
           <h1 class="hero-item delay-200">Tuan Nguyen</h1>
@@ -71,7 +77,7 @@
               <li><i class="fas fa-user"></i><span>Nguyen Le Tuan</span></li>
               <li><i class="fas fa-calendar-alt"></i><span>Born: 06/12/2005</span></li>
               <li><i class="fas fa-graduation-cap"></i><span>University of Transport</span></li>
-              <li><i class="fas fa-location-dot"></i><span>Phu Nhuan District, Ho Chi Minh City, Vietnam</span></li>
+              <li><i class="fas fa-location-dot"></i><span>Thu Duc City, Ho Chi Minh City, Vietnam</span></li>
             </ul>
           </div>
           <div class="about-right fade-intro delay-100">
@@ -204,6 +210,7 @@
               src="./images/Project.PNG"
               alt="Weather App"
               class="project-img"
+              loading="lazy" decoding="async" height="170"
             />
             <div class="project-content">
               <h3 class="project-title">Weather App</h3>
@@ -217,16 +224,14 @@
               <div class="project-links">
                 <a
                   href="https://ltuan126.github.io/weatherly/"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="btn live"
-                  >Live Demo</a
-                >
+                  >Live Demo</a>
                 <a
                   href="https://github.com/Ltuan126/weatherly.git"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="btn github"
-                  >GitHub</a
-                >
+                  >GitHub</a>
               </div>
             </div>
           </div>
@@ -236,6 +241,7 @@
               src="./images/Perfume.PNG"
               alt="Perfume Shop"
               class="project-img"
+              loading="lazy" decoding="async" height="170"
             />
             <div class="project-content">
               <h3 class="project-title">Perfume Shop</h3>
@@ -252,16 +258,14 @@
               <div class="project-links">
                 <a
                   href="https://ltuan126.github.io/Perfurme/"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="btn live"
-                  >Live Demo</a
-                >
+                  >Live Demo</a>
                 <a
                   href="https://github.com/Ltuan126/Perfurme"
-                  target="_blank"
+                  target="_blank" rel="noopener noreferrer"
                   class="btn github"
-                  >GitHub</a
-                >
+                  >GitHub</a>
               </div>
             </div>
           </div>
@@ -302,22 +306,18 @@
             <div class="contact-socials">
               <a
                 href="https://www.facebook.com/share/16fx69rTfP/"
-                target="_blank"
-                ><i class="fab fa-facebook"></i
-              ></a>
+                target="_blank" rel="noopener noreferrer"
+                ><i class="fab fa-facebook"></i></a>
               <a
                 href="https://www.instagram.com/nlt_yqw?igsh=MXhwdGU0bndhbmJpdQ=="
-                target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://github.com/Ltuan126" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
+                target="_blank" rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i></a>
+              <a href="https://github.com/Ltuan126" target="_blank" rel="noopener noreferrer"
+                ><i class="fab fa-github"></i></a>
               <a
                 href="https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-l%C3%AA-b97978345/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
+                target="_blank" rel="noopener noreferrer"
+                ><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
 
