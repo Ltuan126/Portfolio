@@ -26,10 +26,7 @@
       <div class="logo">
         <img src="./images/Tlogo.png" alt="T Logo" id="site-logo" />
       </div>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
-        <i class="fas fa-bars"></i>
-      </button>
-      <nav class="nav" id="primary-nav">
+      <nav class="nav">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#goals">Career Goals</a>
@@ -325,10 +322,16 @@
           </div>
 
           <!-- Form Section -->
-          <form class="contact-modern-form">
-            <input type="text" placeholder="Your Name" required />
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" rows="5" required></textarea>
+          <form class="contact-modern-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you.html">
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none">
+              <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <!-- Optional: enable reCAPTCHA by uncommenting the next line and configuring in Netlify -->
+            <!-- <div data-netlify-recaptcha="true"></div> -->
             <button type="submit">Send Message</button>
           </form>
         </div>
