@@ -1,17 +1,19 @@
 // ===== Scroll To Top Button =====
 const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    scrollToTopBtn.style.display = 'block';
-  } else {
-    scrollToTopBtn.style.display = 'none';
-  }
-}, { passive: true });
-scrollToTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+if (scrollToTopBtn) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = 'block';
+    } else {
+      scrollToTopBtn.style.display = 'none';
+    }
+  }, { passive: true });
+  scrollToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
 // Smooth scrolling for nav links
-const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+const navLinks = Array.from(document.querySelectorAll('.nav a[href^="#"]'));
 navLinks.forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -22,22 +24,58 @@ navLinks.forEach(link => {
   });
 });
 
-// Highlight active nav link on scroll
-window.addEventListener('scroll', () => {
-  const sections = document.querySelectorAll('section');
-  const scrollY = window.scrollY;
+// Highlight active nav link on scroll (throttled)
+const sections = Array.from(document.querySelectorAll('section[id]'));
+const allNavLinks = Array.from(document.querySelectorAll('.nav a'));
+const navLookup = new Map(allNavLinks.map(link => [link.getAttribute('href'), link]));
+const sectionLinkMap = new Map();
+const scheduleFrame = typeof window !== 'undefined' && window.requestAnimationFrame
+  ? (cb) => window.requestAnimationFrame(cb)
+  : (cb) => setTimeout(cb, 16);
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    const sectionHeight = section.offsetHeight;
-    const navLink = document.querySelector(`.nav a[href="#${section.id}"]`);
+sections.forEach(section => {
+  const target = navLookup.get(`#${section.id}`);
+  if (target) sectionLinkMap.set(section, target);
+});
 
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      document.querySelectorAll('.nav a').forEach(link => link.classList.remove('active'));
-      if (navLink) navLink.classList.add('active');
+let activeNavLink = null;
+let navTicking = false;
+
+function setActiveNav(link) {
+  if (activeNavLink === link) return;
+  if (activeNavLink) activeNavLink.classList.remove('active');
+  if (link) link.classList.add('active');
+  activeNavLink = link || null;
+}
+
+function updateActiveNav() {
+  const marker = window.innerHeight * 0.28;
+  let nextActive = null;
+
+  for (const section of sectionLinkMap.keys()) {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= marker && rect.bottom > marker) {
+      nextActive = sectionLinkMap.get(section);
+      break;
     }
+  }
+
+  setActiveNav(nextActive);
+}
+
+function handleNavScroll() {
+  if (navTicking) return;
+  navTicking = true;
+  scheduleFrame(() => {
+    updateActiveNav();
+    navTicking = false;
   });
-}, { passive: true });
+}
+
+if (sectionLinkMap.size) {
+  window.addEventListener('scroll', handleNavScroll, { passive: true });
+  handleNavScroll();
+}
 
 // === Theme toggle + Logo swap + Section class toggle ===
 const toggleBtn = document.getElementById('toggle-theme');
@@ -51,20 +89,24 @@ function updateSectionTheme(isLight) {
   });
 }
 
-toggleBtn.addEventListener('click', () => {
-  const isLight = document.body.classList.toggle('light-mode');
-  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+if (toggleBtn && logoImg) {
+  toggleBtn.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
 
-  logoImg.src = isLight ? './images/light.png' : './images/Tlogo.png';
-  updateSectionTheme(isLight);
-});
+    logoImg.src = isLight ? './images/light.png' : './images/Tlogo.png';
+    updateSectionTheme(isLight);
+  });
+}
 
 // Load theme from localStorage
 window.addEventListener('DOMContentLoaded', () => {
   const isLight = localStorage.getItem('theme') === 'light';
   if (isLight) document.body.classList.add('light-mode');
 
-  logoImg.src = isLight ? './images/light.png' : './images/Tlogo.png';
+  if (logoImg) {
+    logoImg.src = isLight ? './images/light.png' : './images/Tlogo.png';
+  }
   updateSectionTheme(isLight);
 });
 
@@ -144,7 +186,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let ticking = false;
   function onScroll() {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
+      scheduleFrame(() => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
