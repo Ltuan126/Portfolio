@@ -77,9 +77,74 @@ if (sectionLinkMap.size) {
   handleNavScroll();
 }
 
+// Section title highlight on enter
+const sectionTitles = Array.from(document.querySelectorAll('.section-title'));
+if (sectionTitles.length) {
+  const titleObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.45 });
+
+  sectionTitles.forEach(title => titleObserver.observe(title));
+}
+
 // === Theme toggle + Logo swap + Section class toggle ===
 const toggleBtn = document.getElementById('toggle-theme');
 const logoImg = document.getElementById('site-logo');
+
+const gradientThemes = [
+  { className: 'gradient-theme-aurora', label: 'Aurora' },
+  { className: 'gradient-theme-sunset', label: 'Sunset' },
+  { className: 'gradient-theme-ocean', label: 'Ocean' },
+  { className: 'gradient-theme-forest', label: 'Forest' },
+];
+
+let gradientToggle;
+let currentGradientIndex = 0;
+
+function applyGradientThemeByIndex(index) {
+  const safeIndex = ((index % gradientThemes.length) + gradientThemes.length) % gradientThemes.length;
+  const theme = gradientThemes[safeIndex];
+  gradientThemes.forEach(t => document.body.classList.remove(t.className));
+  document.body.classList.add(theme.className);
+  localStorage.setItem('gradientTheme', theme.className);
+  currentGradientIndex = safeIndex;
+  if (gradientToggle) {
+    gradientToggle.dataset.themeLabel = theme.label;
+    gradientToggle.setAttribute('aria-label', `Change background gradient (current: ${theme.label})`);
+    gradientToggle.title = `Gradient: ${theme.label}`;
+  }
+}
+
+function setupGradientToggle() {
+  const header = document.querySelector('.header');
+  if (!header) return;
+  gradientToggle = document.createElement('button');
+  gradientToggle.type = 'button';
+  gradientToggle.id = 'gradient-toggle';
+  gradientToggle.className = 'gradient-toggle';
+  gradientToggle.innerHTML = '<i class="fa-solid fa-palette" aria-hidden="true"></i>';
+  gradientToggle.setAttribute('aria-label', 'Change background gradient');
+  const insertTarget = toggleBtn && toggleBtn.parentElement ? toggleBtn : header.querySelector('.dark-toggle');
+  if (insertTarget) {
+    insertTarget.insertAdjacentElement('afterend', gradientToggle);
+  } else {
+    header.appendChild(gradientToggle);
+  }
+  gradientToggle.addEventListener('click', () => {
+    applyGradientThemeByIndex(currentGradientIndex + 1);
+  });
+}
+
+setupGradientToggle();
+
+const storedGradientTheme = localStorage.getItem('gradientTheme');
+const initialGradientIndex = gradientThemes.findIndex(t => t.className === storedGradientTheme);
+applyGradientThemeByIndex(initialGradientIndex >= 0 ? initialGradientIndex : 0);
 
 function updateSectionTheme(isLight) {
   const sections = document.querySelectorAll('section');
@@ -108,20 +173,6 @@ window.addEventListener('DOMContentLoaded', () => {
     logoImg.src = isLight ? './images/light.png' : './images/Tlogo.png';
   }
   updateSectionTheme(isLight);
-});
-
-// Reveal effect on scroll
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("reveal-visible");
-    }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll("section").forEach(section => {
-  section.classList.add("reveal");
-  observer.observe(section);
 });
 
 // Slide in (legacy selectors) — safe guard when elements are removed
