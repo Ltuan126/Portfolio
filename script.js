@@ -103,48 +103,69 @@ const gradientThemes = [
   { className: 'gradient-theme-forest', label: 'Forest' },
 ];
 
-let gradientToggle;
 let currentGradientIndex = 0;
+let gradientCycleTimer = null;
+const GRADIENT_CYCLE_MS = 3000;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let gradientTransitionTimeout;
+let hasAppliedInitialGradient = false;
 
 function applyGradientThemeByIndex(index) {
+  if (!gradientThemes.length) return;
   const safeIndex = ((index % gradientThemes.length) + gradientThemes.length) % gradientThemes.length;
   const theme = gradientThemes[safeIndex];
   gradientThemes.forEach(t => document.body.classList.remove(t.className));
   document.body.classList.add(theme.className);
+  document.body.dataset.gradientTheme = theme.label;
   localStorage.setItem('gradientTheme', theme.className);
   currentGradientIndex = safeIndex;
-  if (gradientToggle) {
-    gradientToggle.dataset.themeLabel = theme.label;
-    gradientToggle.setAttribute('aria-label', `Change background gradient (current: ${theme.label})`);
-    gradientToggle.title = `Gradient: ${theme.label}`;
-  }
-}
 
-function setupGradientToggle() {
-  const header = document.querySelector('.header');
-  if (!header) return;
-  gradientToggle = document.createElement('button');
-  gradientToggle.type = 'button';
-  gradientToggle.id = 'gradient-toggle';
-  gradientToggle.className = 'gradient-toggle';
-  gradientToggle.innerHTML = '<i class="fa-solid fa-palette" aria-hidden="true"></i>';
-  gradientToggle.setAttribute('aria-label', 'Change background gradient');
-  const insertTarget = toggleBtn && toggleBtn.parentElement ? toggleBtn : header.querySelector('.dark-toggle');
-  if (insertTarget) {
-    insertTarget.insertAdjacentElement('afterend', gradientToggle);
+  if (hasAppliedInitialGradient && !prefersReducedMotion.matches) {
+    document.body.classList.add('gradient-transitioning');
+    if (gradientTransitionTimeout) clearTimeout(gradientTransitionTimeout);
+    gradientTransitionTimeout = setTimeout(() => {
+      document.body.classList.remove('gradient-transitioning');
+    }, 1200);
   } else {
-    header.appendChild(gradientToggle);
+    document.body.classList.remove('gradient-transitioning');
   }
-  gradientToggle.addEventListener('click', () => {
-    applyGradientThemeByIndex(currentGradientIndex + 1);
-  });
+  hasAppliedInitialGradient = true;
 }
 
-setupGradientToggle();
+function startGradientCycle() {
+  if (prefersReducedMotion.matches || !gradientThemes.length) return;
+  if (gradientCycleTimer) clearInterval(gradientCycleTimer);
+  gradientCycleTimer = setInterval(() => {
+    applyGradientThemeByIndex(currentGradientIndex + 1);
+  }, GRADIENT_CYCLE_MS);
+}
 
 const storedGradientTheme = localStorage.getItem('gradientTheme');
 const initialGradientIndex = gradientThemes.findIndex(t => t.className === storedGradientTheme);
 applyGradientThemeByIndex(initialGradientIndex >= 0 ? initialGradientIndex : 0);
+startGradientCycle();
+
+const handleMotionPreferenceChange = event => {
+  if (event.matches) {
+    if (gradientCycleTimer) {
+      clearInterval(gradientCycleTimer);
+      gradientCycleTimer = null;
+    }
+    if (gradientTransitionTimeout) {
+      clearTimeout(gradientTransitionTimeout);
+      gradientTransitionTimeout = null;
+    }
+    document.body.classList.remove('gradient-transitioning');
+  } else {
+    startGradientCycle();
+  }
+};
+
+if (typeof prefersReducedMotion.addEventListener === 'function') {
+  prefersReducedMotion.addEventListener('change', handleMotionPreferenceChange);
+} else if (typeof prefersReducedMotion.addListener === 'function') {
+  prefersReducedMotion.addListener(handleMotionPreferenceChange);
+}
 
 function updateSectionTheme(isLight) {
   const sections = document.querySelectorAll('section');
