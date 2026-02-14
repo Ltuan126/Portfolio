@@ -96,77 +96,6 @@ if (sectionTitles.length) {
 const toggleBtn = document.getElementById('toggle-theme');
 const logoImg = document.getElementById('site-logo');
 
-const gradientThemes = [
-  { className: 'gradient-theme-aurora', label: 'Aurora' },
-  { className: 'gradient-theme-sunset', label: 'Sunset' },
-  { className: 'gradient-theme-ocean', label: 'Ocean' },
-  { className: 'gradient-theme-forest', label: 'Forest' },
-];
-
-let currentGradientIndex = 0;
-let gradientCycleTimer = null;
-const GRADIENT_CYCLE_MS = 3000;
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-let gradientTransitionTimeout;
-let hasAppliedInitialGradient = false;
-
-function applyGradientThemeByIndex(index) {
-  if (!gradientThemes.length) return;
-  const safeIndex = ((index % gradientThemes.length) + gradientThemes.length) % gradientThemes.length;
-  const theme = gradientThemes[safeIndex];
-  gradientThemes.forEach(t => document.body.classList.remove(t.className));
-  document.body.classList.add(theme.className);
-  document.body.dataset.gradientTheme = theme.label;
-  localStorage.setItem('gradientTheme', theme.className);
-  currentGradientIndex = safeIndex;
-
-  if (hasAppliedInitialGradient && !prefersReducedMotion.matches) {
-    document.body.classList.add('gradient-transitioning');
-    if (gradientTransitionTimeout) clearTimeout(gradientTransitionTimeout);
-    gradientTransitionTimeout = setTimeout(() => {
-      document.body.classList.remove('gradient-transitioning');
-    }, 1200);
-  } else {
-    document.body.classList.remove('gradient-transitioning');
-  }
-  hasAppliedInitialGradient = true;
-}
-
-function startGradientCycle() {
-  if (prefersReducedMotion.matches || !gradientThemes.length) return;
-  if (gradientCycleTimer) clearInterval(gradientCycleTimer);
-  gradientCycleTimer = setInterval(() => {
-    applyGradientThemeByIndex(currentGradientIndex + 1);
-  }, GRADIENT_CYCLE_MS);
-}
-
-const storedGradientTheme = localStorage.getItem('gradientTheme');
-const initialGradientIndex = gradientThemes.findIndex(t => t.className === storedGradientTheme);
-applyGradientThemeByIndex(initialGradientIndex >= 0 ? initialGradientIndex : 0);
-startGradientCycle();
-
-const handleMotionPreferenceChange = event => {
-  if (event.matches) {
-    if (gradientCycleTimer) {
-      clearInterval(gradientCycleTimer);
-      gradientCycleTimer = null;
-    }
-    if (gradientTransitionTimeout) {
-      clearTimeout(gradientTransitionTimeout);
-      gradientTransitionTimeout = null;
-    }
-    document.body.classList.remove('gradient-transitioning');
-  } else {
-    startGradientCycle();
-  }
-};
-
-if (typeof prefersReducedMotion.addEventListener === 'function') {
-  prefersReducedMotion.addEventListener('change', handleMotionPreferenceChange);
-} else if (typeof prefersReducedMotion.addListener === 'function') {
-  prefersReducedMotion.addListener(handleMotionPreferenceChange);
-}
-
 function updateSectionTheme(isLight) {
   const sections = document.querySelectorAll('section');
   sections.forEach(section => {
@@ -196,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
   updateSectionTheme(isLight);
 });
 
-// Slide in (legacy selectors) — safe guard when elements are removed
+// Slide in (legacy selectors)
 const aboutText = document.querySelector('.about-text');
 const aboutInterests = document.querySelector('.about-interests');
 if (aboutText || aboutInterests) {
@@ -231,12 +160,19 @@ skillItems.forEach(item => {
   skillObserver.observe(item);
 });
 
+// Quote with typing effect
 window.addEventListener("DOMContentLoaded", () => {
   const quote = document.getElementById("intro-quote");
   if (!quote) return;
-  const fullText = '"Being a developer isn’t about knowing everything—it’s about learning quickly, adapting constantly, and delivering with purpose."';
+  const fullText = '"Being a developer isn\'t about knowing everything - it\'s about learning quickly, adapting constantly, and delivering with purpose."';
+  
+  // Pre-render text to calculate height, then clear and type
+  quote.textContent = fullText;
+  const container = quote.parentElement;
+  container.style.minHeight = container.offsetHeight + 'px';
   quote.textContent = '';
   quote.classList.add('typing');
+  
   let i = 0;
   const speed = 28;
   (function typeWriter(){
