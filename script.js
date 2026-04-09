@@ -92,6 +92,20 @@ if (sectionTitles.length) {
   sectionTitles.forEach(title => titleObserver.observe(title));
 }
 
+// Generic reveal animations for cards and key blocks
+const revealTargets = Array.from(document.querySelectorAll('.reveal, .skill-item, .project-card, .certificate-item, .info-card'));
+if (revealTargets.length) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+  revealTargets.forEach(target => revealObserver.observe(target));
+}
+
 // === Theme toggle + Logo swap + Section class toggle ===
 const toggleBtn = document.getElementById('toggle-theme');
 const logoImg = document.getElementById('site-logo');
@@ -184,6 +198,13 @@ window.addEventListener("DOMContentLoaded", () => {
       quote.classList.add('done');
     }
   })();
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const yearNode = document.getElementById('footer-year');
+  if (yearNode) {
+    yearNode.textContent = new Date().getFullYear();
+  }
 });
 
 // ===== Scroll Progress Bar Effect =====
