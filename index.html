@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tuan Nguyen - Portfolio</title>
-    <meta name="description" content="Tuan Nguyen - Full-Stack Developer Portfolio: projects, skills, contact, and career goals." />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preload" as="image" href="./images/Tuan.jpg" fetchpriority="high">
+    <meta
+      name="description"
+      content="Tuan Nguyen - Full-Stack Developer portfolio with selected projects, technical skills, and contact details."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="./images/Tuan.jpg" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      media="print" onload="this.media='all'"
+      media="print"
+      onload="this.media='all'"
     />
     <noscript>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -20,298 +28,345 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Scroll Progress Bar -->
     <div id="scroll-progress"></div>
-    <!-- Scroll To Top Button -->
-    <button id="scrollToTopBtn" title="Back to top">
+
+    <button id="scrollToTopBtn" title="Back to top" aria-label="Back to top">
       <i class="fas fa-arrow-up"></i>
     </button>
+
     <header class="header">
-      <div class="logo">
-        <img src="./images/Tlogo.png" alt="T Logo" id="site-logo" width="50" height="50" />
-      </div>
-      <nav class="nav">
+      <a class="logo" href="#home" aria-label="Tuan Nguyen home">
+        <img src="./images/Tlogo.png" alt="T logo" id="site-logo" width="50" height="50" />
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#skill">Skills</a>
         <a href="#project">Projects</a>
         <a href="#contact" class="contact-btn">Contact</a>
         <a href="./assets/TuanNguyen-CV.pdf" download class="download-btn">
-          <i class="fas fa-download"></i> Download CV
+          <i class="fas fa-download"></i>
+          Download CV
         </a>
       </nav>
-      <button id="toggle-theme" class="dark-toggle" aria-label="Toggle light/dark theme">
+      <button id="toggle-theme" class="dark-toggle" aria-label="Toggle light or dark theme">
         <i class="fa-solid fa-circle-half-stroke"></i>
       </button>
     </header>
 
-    <section id="home" class="section-dark hero">
-      <div class="section-container">
-        <img
-          src="./images/Tuan.jpg"
-          alt="Tuan Nguyen"
-          class="hero-item delay-100"
-          width="140" height="140"
-          fetchpriority="high" decoding="async"
-        />
-        <div class="hero-content">
-          <h1 class="hero-item delay-200">Tuan Nguyen</h1>
-          <h2 class="hero-item delay-300">Full-Stack Developer</h2>
-          <p class="location hero-item delay-400">
-            <i class="fas fa-map-marker-alt"></i> Ho Chi Minh, Vietnam
-          </p>
-          <blockquote class="quote-container">
-            <span id="intro-quote"></span>
-          </blockquote>
-
-          <a href="#contact" class="cta-btn hero-item delay-600">Hire Me</a>
-        </div>
-      </div>
-    </section>
-    <section id="about" class="section-dark about-section">
-      <div class="section-container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-me-grid">
-          <div class="about-me-image">
-            <div class="image-frame">
-              <img src="./images/TuanInfo.jpg" alt="Tuan Nguyen" loading="lazy" decoding="async" />
+    <main>
+      <section id="home" class="section-dark hero">
+        <div class="section-container hero-grid">
+          <div class="hero-copy">
+            <div class="hero-avatar reveal delay-100">
+              <img src="./images/Tuan.jpg" alt="Tuan Nguyen portrait" width="132" height="132" decoding="async" />
+              <span class="hero-avatar-badge">That's me</span>
             </div>
-          </div>
-          <div class="about-me-content">
-            <p class="about-me-text">
-              I'm a dedicated IT student with a passion for creating innovative solutions through technology. My journey in the tech world has equipped me with a strong foundation in programming, web development, and problem-solving.
+            <span class="eyebrow reveal delay-100">Open for internships</span>
+            <h1 class="hero-title reveal delay-200">Tuan Nguyen</h1>
+            <p class="hero-subtitle reveal delay-300">Full-Stack Developer</p>
+            <p class="location reveal delay-400">
+              <i class="fas fa-map-marker-alt"></i>
+              Ho Chi Minh, Vietnam
             </p>
-            <p class="about-me-text">
-              Currently seeking an internship opportunity to apply my skills in a real-world environment, collaborate with experienced professionals, and contribute to meaningful projects.
+            <p class="hero-description reveal delay-500">
+              I design and build polished web experiences with strong front-end details, practical back-end thinking, and a focus on shipping useful products.
             </p>
-            <div class="about-me-cards">
-              <div class="info-card">
-                <div class="info-card-icon education"><i class="fas fa-graduation-cap"></i></div>
-                <div class="info-card-content"><h4>Education</h4><p>University of Transport - Information Technology</p></div>
-              </div>
-              <div class="info-card">
-                <div class="info-card-icon goal"><i class="fas fa-bullseye"></i></div>
-                <div class="info-card-content"><h4>Goal</h4><p>Become a skilled full-stack developer</p></div>
-              </div>
-              <div class="info-card">
-                <div class="info-card-icon passion"><i class="fas fa-heart"></i></div>
-                <div class="info-card-content"><h4>Passion</h4><p>Building user-friendly applications</p></div>
+            <blockquote class="quote-container reveal delay-600">
+              <span id="intro-quote"></span>
+            </blockquote>
+            <div class="hero-actions reveal delay-700">
+              <a href="#project" class="cta-btn">See Selected Work</a>
+              <a href="#contact" class="secondary-btn">Start a Conversation</a>
+            </div>
+            <div class="hero-marquee reveal delay-800" aria-label="Highlights">
+              <div class="marquee-track">
+                <span>UI systems</span>
+                <span>React builds</span>
+                <span>Fast prototypes</span>
+                <span>API integration</span>
+                <span>Clean handoff</span>
+                <span>UI systems</span>
+                <span>React builds</span>
+                <span>Fast prototypes</span>
+                <span>API integration</span>
+                <span>Clean handoff</span>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="skill" class="section-dark">
-      <div class="section-container">
-        <h2 class="section-title">Skills & Expertise</h2>
-        <div class="skills-section">
-          <h3>Technical Skills</h3>
-          <div class="skill-bars">
-            <div class="skill-item delay-100">
-              <div class="skill-label"><span>React</span><span>90%</span></div>
-              <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 90%"></div>
-              </div>
-            </div>
-            <div class="skill-item delay-200">
-              <div class="skill-label">
-                <span>Node.js</span><span>85%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 85%"></div>
-              </div>
-            </div>
-            <div class="skill-item delay-300">
-              <div class="skill-label"><span>Python</span><span>82%</span></div>
-              <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 82%"></div>
-              </div>
-            </div>
-            <div class="skill-item delay-400">
-              <div class="skill-label">
-                <span>Tailwind CSS</span><span>92%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 92%"></div>
-              </div>
-            </div>
-            <div class="skill-item delay-500">
-              <div class="skill-label">
-                <span>TypeScript</span><span>78%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 78%"></div>
-              </div>
-            </div>
-            <div class="skill-item delay-600">
-              <div class="skill-label">
-                <span>MongoDB</span><span>80%</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-bar-fill" style="width: 80%"></div>
-              </div>
+            <div class="hero-stats">
+              <article class="stat-card reveal delay-200">
+                <strong>2+</strong>
+                <span>Featured projects</span>
+              </article>
+              <article class="stat-card reveal delay-300">
+                <strong>Full-stack</strong>
+                <span>React, Node, Python</span>
+              </article>
+              <article class="stat-card reveal delay-400">
+                <strong>UI-first</strong>
+                <span>Clean, responsive interfaces</span>
+              </article>
             </div>
           </div>
 
-          <h3 style="margin-top: 60px">Soft Skills</h3>
-          <div class="soft-skills">
-            <span>Problem Solving</span>
-            <span>Team Leadership</span>
-            <span>Communication</span>
-            <span>Project Management</span>
-            <span>Mentoring</span>
-            <span>Creative Thinking</span>
-            <span>Adaptability</span>
-            <span>Time Management</span>
-          </div>
+          <aside class="hero-visual reveal delay-300">
+            <div class="hero-card">
+              <div class="hero-badge">Portfolio 2026</div>
+              <div class="portrait-frame">
+                <img src="./images/Tuan.jpg" alt="Tuan Nguyen portrait" width="320" height="320" decoding="async" />
+              </div>
+              <div class="hero-card-footer">
+                <h2>Building interfaces that feel premium</h2>
+                <p>React-driven projects, practical API work, and thoughtful UI polish.</p>
+              </div>
+              <div class="hero-chip-row">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>Tailwind</span>
+                <span>MongoDB</span>
+              </div>
+            </div>
+          </aside>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="project" class="section-dark">
-      <div class="section-container">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <img
-              src="./images/Project.PNG"
-              alt="Weather App"
-              class="project-img"
-              loading="lazy" decoding="async" width="400" height="170"
-            />
-            <div class="project-content">
-              <h3 class="project-title">Weather App</h3>
-              <p class="project-description">
-                A React-based weather forecast app using OpenWeatherMap API.
+      <section id="about" class="section-dark about-section">
+        <div class="section-container">
+          <span class="eyebrow">About</span>
+          <h2 class="section-title">A focused builder with a product mindset</h2>
+          <div class="about-me-grid">
+            <div class="about-me-image reveal">
+              <div class="image-frame">
+                <img src="./images/TuanInfo.jpg" alt="Tuan Nguyen" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <div class="about-me-content reveal delay-200">
+              <p class="about-me-text">
+                I am an IT student who likes turning ideas into usable interfaces. My work sits at the intersection of clean design, solid implementation, and enough technical discipline to ship confidently.
               </p>
-              <div class="tech-tags">
-                <span class="tag">React</span>
-                <span class="tag">OpenWeatherMap API</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://ltuan126.github.io/weatherly/"
-                  target="_blank" rel="noopener noreferrer"
-                  class="btn live"
-                  >Live Demo</a>
-                <a
-                  href="https://github.com/Ltuan126/weatherly.git"
-                  target="_blank" rel="noopener noreferrer"
-                  class="btn github"
-                  >GitHub</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <img
-              src="./images/Perfume.PNG"
-              alt="Perfume Shop"
-              class="project-img"
-              loading="lazy" decoding="async" width="400" height="170"
-            />
-            <div class="project-content">
-              <h3 class="project-title">Perfume Shop</h3>
-              <p class="project-description">
-                An e-commerce website for fragrance lovers to explore and
-                purchase high-end perfumes with a sleek React interface and
-                Stripe integration.
+              <p class="about-me-text">
+                I am currently looking for an internship where I can contribute to real products, learn from stronger teams, and keep improving my full-stack skill set.
               </p>
-              <div class="tech-tags">
-                <span class="tag">React</span>
-                <span class="tag">Node.js</span>
-                <span class="tag">Tailwind CSS</span>
-              </div>
-              <div class="project-links">
-                <a
-                  href="https://ltuan126.github.io/Perfurme/"
-                  target="_blank" rel="noopener noreferrer"
-                  class="btn live"
-                  >Live Demo</a>
-                <a
-                  href="https://github.com/Ltuan126/Perfurme"
-                  target="_blank" rel="noopener noreferrer"
-                  class="btn github"
-                  >GitHub</a>
+              <div class="about-me-cards">
+                <div class="info-card reveal delay-200">
+                  <div class="info-card-icon education"><i class="fas fa-graduation-cap"></i></div>
+                  <div class="info-card-content">
+                    <h4>Education</h4>
+                    <p>University of Transport - Information Technology</p>
+                  </div>
+                </div>
+                <div class="info-card reveal delay-300">
+                  <div class="info-card-icon goal"><i class="fas fa-bullseye"></i></div>
+                  <div class="info-card-content">
+                    <h4>Goal</h4>
+                    <p>Become a reliable full-stack developer</p>
+                  </div>
+                </div>
+                <div class="info-card reveal delay-400">
+                  <div class="info-card-icon passion"><i class="fas fa-heart"></i></div>
+                  <div class="info-card-content">
+                    <h4>Passion</h4>
+                    <p>Building products people actually want to use</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="certificates" class="section-dark">
-      <div class="section-container">
-        <h2 class="section-title">Certificates</h2>
-        <div class="certificates-grid">
-          <div class="certificate-item placeholder">
-            <i class="fas fa-file-alt"></i>
-            <h3>Uncertified</h3>
-            <p>Certificates will be added soon. Stay tuned!</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      <section id="skill" class="section-dark">
+        <div class="section-container">
+          <span class="eyebrow">Capabilities</span>
+          <h2 class="section-title">Skills and expertise</h2>
+          <div class="skills-section">
+            <div class="skills-intro reveal">
+              <p>
+                A practical mix of front-end, back-end, and problem-solving skills that supports both polished UI work and project delivery.
+              </p>
+            </div>
 
-    <section id="contact" class="section-dark">
-      <div class="section-container">
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-modern-grid">
-          <!-- Info Section -->
-          <div class="contact-modern-info">
-            <p>
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:tuanlenguyen612@gmail.com"
-                >tuanlenguyen612@gmail.com</a
-              >
-            </p>
-            <p>
-              <i class="fas fa-phone"></i>
-              <a href="tel:+84708573967">+84 0708573967</a>
-            </p>
+            <div class="skill-bars">
+              <div class="skill-item reveal delay-100">
+                <div class="skill-label"><span>React</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-bar-fill width-90"></div></div>
+              </div>
+              <div class="skill-item reveal delay-200">
+                <div class="skill-label"><span>Node.js</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-bar-fill width-85"></div></div>
+              </div>
+              <div class="skill-item reveal delay-300">
+                <div class="skill-label"><span>Python</span><span>82%</span></div>
+                <div class="skill-bar"><div class="skill-bar-fill width-82"></div></div>
+              </div>
+              <div class="skill-item reveal delay-400">
+                <div class="skill-label"><span>Tailwind CSS</span><span>92%</span></div>
+                <div class="skill-bar"><div class="skill-bar-fill width-92"></div></div>
+              </div>
+              <div class="skill-item reveal delay-500">
+                <div class="skill-label"><span>TypeScript</span><span>78%</span></div>
+                <div class="skill-bar"><div class="skill-bar-fill width-78"></div></div>
+              </div>
+              <div class="skill-item reveal delay-600">
+                <div class="skill-label"><span>MongoDB</span><span>80%</span></div>
+                <div class="skill-bar"><div class="skill-bar-fill width-80"></div></div>
+              </div>
+            </div>
 
-            <div class="contact-socials">
-              <a
-                href="https://www.facebook.com/share/16fx69rTfP/"
-                target="_blank" rel="noopener noreferrer"
-                ><i class="fab fa-facebook"></i></a>
-              <a
-                href="https://www.instagram.com/nlt_yqw?igsh=MXhwdGU0bndhbmJpdQ=="
-                target="_blank" rel="noopener noreferrer"
-                ><i class="fab fa-instagram"></i></a>
-              <a href="https://github.com/Ltuan126" target="_blank" rel="noopener noreferrer"
-                ><i class="fab fa-github"></i></a>
-              <a
-                href="https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-l%C3%AA-b97978345/"
-                target="_blank" rel="noopener noreferrer"
-                ><i class="fab fa-linkedin"></i></a>
+            <h3 class="skills-subtitle reveal delay-200">Soft skills</h3>
+            <div class="soft-skills reveal delay-300">
+              <span>Problem Solving</span>
+              <span>Team Leadership</span>
+              <span>Communication</span>
+              <span>Project Management</span>
+              <span>Mentoring</span>
+              <span>Creative Thinking</span>
+              <span>Adaptability</span>
+              <span>Time Management</span>
             </div>
           </div>
-
-          <!-- Form Section -->
-          <form class="contact-modern-form" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="thank-you.html">
-            <input type="hidden" name="form-name" value="contact" />
-            <p style="display:none">
-              <label>Donâ€™t fill this out if you're human: <input name="bot-field" /></label>
-            </p>
-            <input type="text" name="name" placeholder="Your Name" required />
-            <input type="email" name="email" placeholder="Your Email" required />
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <!-- Optional: enable reCAPTCHA by uncommenting the next line and configuring in Netlify -->
-            <!-- <div data-netlify-recaptcha="true"></div> -->
-            <button type="submit">Send Message</button>
-          </form>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="project" class="section-dark">
+        <div class="section-container">
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section-title">Projects that show range and finish</h2>
+          <div class="project-grid">
+            <article class="project-card featured reveal delay-100">
+              <div class="project-media">
+                <span class="project-badge">Featured</span>
+                <img
+                  src="./images/Project.PNG"
+                  alt="Weather App"
+                  class="project-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="170"
+                />
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Weather App</h3>
+                <p class="project-description">
+                  A React-based weather forecast app using OpenWeatherMap API with a clean, fast interface.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">OpenWeatherMap API</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://ltuan126.github.io/weatherly/" target="_blank" rel="noopener noreferrer" class="btn live">Live Demo</a>
+                  <a href="https://github.com/Ltuan126/weatherly.git" target="_blank" rel="noopener noreferrer" class="btn github">GitHub</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal delay-200">
+              <div class="project-media">
+                <span class="project-badge">E-commerce</span>
+                <img
+                  src="./images/Perfume.PNG"
+                  alt="Perfume Shop"
+                  class="project-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="400"
+                  height="170"
+                />
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Perfume Shop</h3>
+                <p class="project-description">
+                  An e-commerce website for fragrance lovers to browse premium products through a sleek React interface.
+                </p>
+                <div class="tech-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                  <a href="https://ltuan126.github.io/Perfurme/" target="_blank" rel="noopener noreferrer" class="btn live">Live Demo</a>
+                  <a href="https://github.com/Ltuan126/Perfurme" target="_blank" rel="noopener noreferrer" class="btn github">GitHub</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="certificates" class="section-dark">
+        <div class="section-container">
+          <span class="eyebrow">Proof</span>
+          <h2 class="section-title">Certificates</h2>
+          <div class="certificates-grid">
+            <div class="certificate-item placeholder reveal">
+              <i class="fas fa-file-alt"></i>
+              <h3>Coming soon</h3>
+              <p>Certificate highlights will be added as new milestones are completed.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-dark">
+        <div class="section-container">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title">Get in touch</h2>
+          <div class="contact-modern-grid">
+            <div class="contact-modern-info reveal">
+              <div class="contact-panel">
+                <p>
+                  <i class="fas fa-envelope"></i>
+                  <a href="mailto:tuanlenguyen612@gmail.com">tuanlenguyen612@gmail.com</a>
+                </p>
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <a href="tel:+84708573967">+84 0708573967</a>
+                </p>
+                <p>
+                  <i class="fas fa-location-dot"></i>
+                  Ho Chi Minh, Vietnam
+                </p>
+              </div>
+
+              <div class="contact-socials">
+                <a href="https://www.facebook.com/share/16fx69rTfP/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/nlt_yqw?igsh=MXhwdGU0bndhbmJpdQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://github.com/Ltuan126" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-l%C3%AA-b97978345/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+
+            <form class="contact-modern-form reveal delay-200" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="thank-you.html">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="sr-only">
+                <label>
+                  Do not fill this out if you're human: <input name="bot-field" />
+                </label>
+              </p>
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="email" name="email" placeholder="Your Email" required />
+              <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="section-dark">
-      <div class="section-container" style="text-align: center">
-        Â© 2025 Tuan Nguyen. All rights reserved.
-        <div>
-          <a href="#home" class="back-to-top">Back to top â†‘</a>
-        </div>
+      <div class="section-container footer-inner">
+        <p><span id="footer-year">2026</span> Tuan Nguyen. All rights reserved.</p>
+        <a href="#home" class="back-to-top">Back to top</a>
       </div>
     </footer>
   </body>
