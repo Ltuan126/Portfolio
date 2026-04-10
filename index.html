@@ -45,7 +45,7 @@
         <a href="#project">Projects</a>
         <a href="#contact" class="contact-btn">Contact</a>
         <a href="./assets/TuanNguyen-CV.pdf" download class="download-btn">
-          <i class="fas fa-download"></i>
+          <!-- <i class="fas fa-download"></i> -->
           Download CV
         </a>
       </nav>
@@ -182,47 +182,178 @@
           <div class="skills-section">
             <div class="skills-intro reveal">
               <p>
-                A practical mix of front-end, back-end, and problem-solving skills that supports both polished UI work and project delivery.
+                A practical mix of front-end, back-end, and problem-solving skills presented as a compact Bento Grid for quick CV scanning.
               </p>
             </div>
 
-            <div class="skill-bars">
-              <div class="skill-item reveal delay-100">
-                <div class="skill-label"><span>React</span><span>90%</span></div>
-                <div class="skill-bar"><div class="skill-bar-fill width-90"></div></div>
-              </div>
-              <div class="skill-item reveal delay-200">
-                <div class="skill-label"><span>Node.js</span><span>85%</span></div>
-                <div class="skill-bar"><div class="skill-bar-fill width-85"></div></div>
-              </div>
-              <div class="skill-item reveal delay-300">
-                <div class="skill-label"><span>Python</span><span>82%</span></div>
-                <div class="skill-bar"><div class="skill-bar-fill width-82"></div></div>
-              </div>
-              <div class="skill-item reveal delay-400">
-                <div class="skill-label"><span>Tailwind CSS</span><span>92%</span></div>
-                <div class="skill-bar"><div class="skill-bar-fill width-92"></div></div>
-              </div>
-              <div class="skill-item reveal delay-500">
-                <div class="skill-label"><span>TypeScript</span><span>78%</span></div>
-                <div class="skill-bar"><div class="skill-bar-fill width-78"></div></div>
-              </div>
-              <div class="skill-item reveal delay-600">
-                <div class="skill-label"><span>MongoDB</span><span>80%</span></div>
-                <div class="skill-bar"><div class="skill-bar-fill width-80"></div></div>
-              </div>
+            <div class="skills-bento-grid">
+              <article class="skill-bento-card featured react reveal delay-100">
+                <div class="skill-bento-top">
+                  <span class="skill-badge">Frontend Core</span>
+                  <span class="skill-note">Primary stack</span>
+                </div>
+                <div class="skill-bento-main">
+                  <div class="skill-icon react"><i class="fa-brands fa-react"></i></div>
+                  <div class="skill-copy">
+                    <h3>React</h3>
+                    <p>Reusable UI components and responsive interfaces.</p>
+                  </div>
+                </div>
+                <div class="skill-mini-tags">
+                  <span>Hooks</span>
+                  <span>SPA</span>
+                </div>
+              </article>
+
+              <article class="skill-bento-card node reveal delay-200">
+                <div class="skill-bento-top">
+                  <span class="skill-badge">Backend</span>
+                  <span class="skill-note">API logic</span>
+                </div>
+                <div class="skill-bento-main">
+                  <div class="skill-icon node"><i class="fa-brands fa-node-js"></i></div>
+                  <div class="skill-copy">
+                    <h3>Node.js</h3>
+                    <p>REST APIs and server-side features.</p>
+                  </div>
+                </div>
+                <div class="skill-mini-tags">
+                  <span>Express</span>
+                  <span>REST</span>
+                </div>
+              </article>
+
+              <article class="skill-bento-card python reveal delay-300">
+                <div class="skill-bento-top">
+                  <span class="skill-badge">Scripting</span>
+                  <span class="skill-note">Problem solving</span>
+                </div>
+                <div class="skill-bento-main">
+                  <div class="skill-icon python"><i class="fa-brands fa-python"></i></div>
+                  <div class="skill-copy">
+                    <h3>Python</h3>
+                    <p>Fast scripting for automation and analysis.</p>
+                  </div>
+                </div>
+                <div class="skill-mini-tags">
+                  <span>Automation</span>
+                  <span>Data</span>
+                </div>
+              </article>
+
+              <article class="skill-bento-card featured tailwind reveal delay-400">
+                <div class="skill-bento-top">
+                  <span class="skill-badge">UI System</span>
+                  <span class="skill-note">Visual polish</span>
+                </div>
+                <div class="skill-bento-main">
+                  <div class="skill-icon tailwind"><i class="fa-solid fa-wind"></i></div>
+                  <div class="skill-copy">
+                    <h3>Tailwind CSS</h3>
+                    <p>Design speed with consistent utility-first styling.</p>
+                  </div>
+                </div>
+                <div class="skill-mini-tags">
+                  <span>Design tokens</span>
+                  <span>Responsive</span>
+                </div>
+              </article>
+
+              <article class="skill-bento-card typescript reveal delay-500">
+                <div class="skill-bento-top">
+                  <span class="skill-badge">Type Safety</span>
+                  <span class="skill-note">Reliable code</span>
+                </div>
+                <div class="skill-bento-main">
+                  <div class="skill-icon typescript"><i class="fa-solid fa-file-code"></i></div>
+                  <div class="skill-copy">
+                    <h3>TypeScript</h3>
+                    <p>Safer JavaScript for scalable front-end work.</p>
+                  </div>
+                </div>
+                <div class="skill-mini-tags">
+                  <span>Types</span>
+                  <span>DX</span>
+                </div>
+              </article>
+
+              <article class="skill-bento-card mongodb reveal delay-600">
+                <div class="skill-bento-top">
+                  <span class="skill-badge">Database</span>
+                  <span class="skill-note">Persistence</span>
+                </div>
+                <div class="skill-bento-main">
+                  <div class="skill-icon mongodb"><i class="fa-solid fa-leaf"></i></div>
+                  <div class="skill-copy">
+                    <h3>MongoDB</h3>
+                    <p>Flexible document storage for product data.</p>
+                  </div>
+                </div>
+                <div class="skill-mini-tags">
+                  <span>Collections</span>
+                  <span>CRUD</span>
+                </div>
+              </article>
             </div>
 
             <h3 class="skills-subtitle reveal delay-200">Soft skills</h3>
-            <div class="soft-skills reveal delay-300">
-              <span>Problem Solving</span>
-              <span>Team Leadership</span>
-              <span>Communication</span>
-              <span>Project Management</span>
-              <span>Mentoring</span>
-              <span>Creative Thinking</span>
-              <span>Adaptability</span>
-              <span>Time Management</span>
+            <div class="soft-bento-grid reveal delay-300">
+              <article class="soft-bento-card reveal delay-100">
+                <div class="soft-bento-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                <div>
+                  <h4>Problem Solving</h4>
+                  <p>Break down issues and ship practical fixes.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-200">
+                <div class="soft-bento-icon"><i class="fa-solid fa-people-group"></i></div>
+                <div>
+                  <h4>Team Leadership</h4>
+                  <p>Keep work clear, aligned, and moving forward.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-300">
+                <div class="soft-bento-icon"><i class="fa-solid fa-comments"></i></div>
+                <div>
+                  <h4>Communication</h4>
+                  <p>Explain ideas simply across technical and non-technical teams.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-400">
+                <div class="soft-bento-icon"><i class="fa-solid fa-list-check"></i></div>
+                <div>
+                  <h4>Project Management</h4>
+                  <p>Organize tasks, timelines, and priorities cleanly.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-500">
+                <div class="soft-bento-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <div>
+                  <h4>Mentoring</h4>
+                  <p>Share knowledge in a way that helps others grow.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-600">
+                <div class="soft-bento-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div>
+                  <h4>Creative Thinking</h4>
+                  <p>Look for cleaner and more usable solutions.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-700">
+                <div class="soft-bento-icon"><i class="fa-solid fa-arrows-rotate"></i></div>
+                <div>
+                  <h4>Adaptability</h4>
+                  <p>Adjust quickly when requirements or tools change.</p>
+                </div>
+              </article>
+              <article class="soft-bento-card reveal delay-800">
+                <div class="soft-bento-icon"><i class="fa-solid fa-clock"></i></div>
+                <div>
+                  <h4>Time Management</h4>
+                  <p>Stay on schedule without losing quality.</p>
+                </div>
+              </article>
             </div>
           </div>
         </div>

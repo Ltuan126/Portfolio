@@ -93,7 +93,7 @@ if (sectionTitles.length) {
 }
 
 // Generic reveal animations for cards and key blocks
-const revealTargets = Array.from(document.querySelectorAll('.reveal, .skill-item, .project-card, .certificate-item, .info-card'));
+const revealTargets = Array.from(document.querySelectorAll('.reveal, .skill-bento-card, .project-card, .certificate-item, .info-card'));
 if (revealTargets.length) {
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -159,20 +159,6 @@ if (aboutText || aboutInterests) {
   if (aboutText) aboutObserver.observe(aboutText);
   if (aboutInterests) aboutObserver.observe(aboutInterests);
 }
-
-// Staggered skill-item animation when scrolling to skill section
-const skillItems = document.querySelectorAll('.skill-item');
-const skillObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-skill');
-    }
-  });
-}, { threshold: 0.2 });
-
-skillItems.forEach(item => {
-  skillObserver.observe(item);
-});
 
 // Quote with typing effect
 window.addEventListener("DOMContentLoaded", () => {
