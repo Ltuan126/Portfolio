@@ -28,6 +28,20 @@
     <script src="script.js" defer></script>
   </head>
   <body>
+    <video
+      class="site-video-bg"
+      autoplay
+      loop
+      muted
+      preload="metadata"
+      aria-hidden="true"
+    >
+      <source
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4"
+        type="video/mp4"
+      />
+    </video>
+
     <div id="scroll-progress"></div>
 
     <button id="scrollToTopBtn" title="Back to top" aria-label="Back to top">
@@ -49,8 +63,8 @@
           Download CV
         </a>
       </nav>
-      <button id="toggle-theme" class="dark-toggle" aria-label="Toggle light or dark theme">
-        <i class="fa-solid fa-circle-half-stroke"></i>
+      <button id="toggle-theme" class="dark-toggle" aria-label="Switch language to Vietnamese">
+        VI
       </button>
     </header>
 
@@ -462,16 +476,16 @@
               </div>
 
               <div class="contact-socials">
-                <a href="https://www.facebook.com/share/16fx69rTfP/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a class="social-link social-facebook" href="https://www.facebook.com/share/16fx69rTfP/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <i class="fab fa-facebook"></i>
                 </a>
-                <a href="https://www.instagram.com/nlt_yqw?igsh=MXhwdGU0bndhbmJpdQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a class="social-link social-instagram" href="https://www.instagram.com/nlt_yqw?igsh=MXhwdGU0bndhbmJpdQ==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://github.com/Ltuan126" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <a class="social-link social-github" href="https://github.com/Ltuan126" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                   <i class="fab fa-github"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-l%C3%AA-b97978345/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <a class="social-link social-linkedin" href="https://www.linkedin.com/in/tu%E1%BA%A5n-nguy%E1%BB%85n-l%C3%AA-b97978345/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                   <i class="fab fa-linkedin"></i>
                 </a>
               </div>
@@ -481,7 +495,7 @@
               <input type="hidden" name="form-name" value="contact" />
               <p class="sr-only">
                 <label>
-                  Do not fill this out if you're human: <input name="bot-field" />
+                  <span id="anti-bot-text">Do not fill this out if you're human:</span> <input name="bot-field" />
                 </label>
               </p>
               <input type="text" name="name" placeholder="Your Name" required />
@@ -496,8 +510,8 @@
 
     <footer class="section-dark">
       <div class="section-container footer-inner">
-        <p><span id="footer-year">2026</span> Tuan Nguyen. All rights reserved.</p>
-        <a href="#home" class="back-to-top">Back to top</a>
+        <p><span id="footer-year">2026</span> <span id="footer-rights">Tuan Nguyen. All rights reserved.</span></p>
+        <!-- <a href="#home" class="back-to-top">Back to top</a> -->
       </div>
     </footer>
   </body>
