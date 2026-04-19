@@ -1,47 +1,60 @@
-# 💼 Tuan Nguyen - Developer Portfolio
+# Tuan Nguyen Portfolio
 
-Welcome to my personal developer portfolio website. This project showcases my skills, experience, and projects as a Full-Stack Developer, built with modern web technologies and enhanced UI/UX animations.
+Personal developer portfolio built with static web technologies.
 
-## 🚀 Live Demo
+## Overview
 
-👉 [View Live Site](https://ltuan126.github.io/MyPorfolio/)
+This project is a single-page portfolio site that highlights:
 
----
+- Personal introduction and hero section
+- About section
+- Skills and capability cards
+- Project showcase
+- Contact form and social links
+- Language toggle (English / Vietnamese)
+- Fullscreen looping video background for cinematic depth
 
-## 📌 Features
+## Tech Stack
 
-- 🌓 Light/Dark mode toggle with persistent theme memory
-- 💻 Smooth animated transitions & interactive elements
-- ✨ Scroll-triggered section reveals
-- 📱 Fully responsive on all screen sizes
-- 📂 Project showcase with GitHub & live links
-- 📬 Contact section with active links (email, phone, GitHub, LinkedIn)
+- HTML5
+- CSS3
+- JavaScript (vanilla)
+- Font Awesome icons
 
----
+## Current Project Structure
 
-## 🛠️ Built With
+```text
+.
+├── assets/
+├── images/
+├── index.html
+├── script.js
+├── style.css
+├── thank-you.html
+└── README.md
+```
 
-- **HTML5 & CSS3**
-- **JavaScript (ES6+)**
-- **Font Awesome**
-- **Responsive Flexbox Layout**
-- **Custom Animation with CSS & JS**
+## Run Locally
 
----
+Because this is a static website, you can run it in one of these ways:
 
-## 📷 Preview
+1. Open index.html directly in your browser.
+2. Or use VS Code Live Server for better local testing.
 
-![My Portfolio Screenshot](./images/preview.png)
+## Recent Update
 
----
+The site now uses a fullscreen background video element with:
 
-## 📦 How to Use Locally
+- autoplay
+- loop
+- muted
+- preload="metadata"
 
-```bash
-# Clone the repository
-git clone https://github.com/Ltuan126/MyPorfolio.git
+Video source:
 
-# Navigate into the folder
-cd MyPorfolio
+[Background video source](https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4)
 
-# Open index.html in browser
+## Notes
+
+- Content is managed directly in [script.js](script.js) through the `translations` object.
+- No build step is required for local viewing.
