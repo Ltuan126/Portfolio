@@ -56,5 +56,3 @@ Video source:
 
 ## Notes
 
-- Content is managed directly in [script.js](script.js) through the `translations` object.
-- No build step is required for local viewing.
