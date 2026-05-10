@@ -458,3 +458,16 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+// ===== Pause video when tab is hidden =====
+const bgVideo = document.querySelector('.site-video-bg');
+if (bgVideo) {
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      bgVideo.pause();
+    } else {
+      bgVideo.play();
+    }
+  });
+}
+

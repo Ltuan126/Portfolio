@@ -100,8 +100,7 @@ footer {
 }
 
 section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 500px;
+  /* content-visibility removed — was causing layout jank */
 }
 
 img {
@@ -619,6 +618,7 @@ body.light-mode .hero-marquee {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   animation: marquee-scroll 26s linear infinite;
+  will-change: transform;
 }
 
 body.light-mode .marquee-track {
@@ -1811,11 +1811,10 @@ body.light-mode .footer-inner {
 .contact-modern-form,
 .certificate-item,
 .secondary-btn {
-  background: rgba(6, 10, 20, 0.32);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(6, 10, 20, 0.48);
+  border-color: rgba(255, 255, 255, 0.14);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+  /* backdrop-filter removed — was causing major GPU lag with 12+ elements */
 }
 
 body.light-mode .quote-container,
