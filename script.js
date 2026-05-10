@@ -118,7 +118,7 @@ const translations = {
     nav: ['Home', 'About', 'Skills', 'Projects'],
     contactBtn: 'Contact',
     downloadCv: 'Download CV',
-    homeEyebrow: 'Open for internships',
+    homeEyebrow: 'Software Engineer · Full-Stack Developer',
     heroSubtitle: 'Full-Stack Developer',
     heroDescription: 'I design and build polished web experiences with strong front-end details, practical back-end thinking, and a focus on shipping useful products.',
     heroActions: ['See Selected Work', 'Start a Conversation'],
@@ -137,8 +137,8 @@ const translations = {
       'Get in touch'
     ],
     aboutTexts: [
-      'I am an IT student who likes turning ideas into usable interfaces. My work sits at the intersection of clean design, solid implementation, and enough technical discipline to ship confidently.',
-      'I am currently looking for an internship where I can contribute to real products, learn from stronger teams, and keep improving my full-stack skill set.'
+      'I\'m a software engineer who turns ideas into polished, usable products. My work sits at the intersection of thoughtful UI design, solid back-end architecture, and the discipline to ship things that actually work.',
+      'I build full-stack web and mobile applications with a focus on clean interfaces, maintainable code, and real-world utility — from e-commerce platforms to AI-powered monitoring systems.'
     ],
     aboutCards: {
       titles: ['Education', 'Goal', 'Passion'],
@@ -148,7 +148,7 @@ const translations = {
         'Building products people actually want to use'
       ]
     },
-    skillsIntro: 'A practical mix of front-end, back-end, and problem-solving skills presented as a compact Bento Grid for quick CV scanning.',
+    skillsIntro: 'These are the tools I actually use — picked up through building real projects, not just tutorials. Each one has left a mark on something I\'ve shipped.',
     skillBadges: ['Frontend Core', 'Backend', 'Scripting', 'UI System', 'Type Safety', 'Database'],
     skillNotes: ['Primary stack', 'API logic', 'Problem solving', 'Visual polish', 'Reliable code', 'Persistence'],
     skillTitles: ['React', 'Node.js', 'Python', 'Tailwind CSS', 'TypeScript', 'MongoDB'],
