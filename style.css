@@ -1,4 +1,4 @@
-﻿/* ========== Base ========== */
+/* ========== Base ========== */
 :root {
   --bg-dark: #060816;
   --bg-dark-2: #0b1224;
@@ -101,7 +101,7 @@ footer {
 
 section {
   content-visibility: auto;
-  contain-intrinsic-size: 1px 1000px;
+  contain-intrinsic-size: auto 500px;
 }
 
 img {
