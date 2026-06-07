@@ -1529,6 +1529,118 @@ body.light-mode .project-media {
   background: rgba(15, 23, 42, 0.03);
 }
 
+/* ========== Info Card Meta ========== */
+.info-card-meta {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #57a1ff;
+  letter-spacing: 0.02em;
+}
+
+/* ========== Timeline ========== */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 108px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, transparent, #57a1ff 12%, #8b5cf6 50%, #19d3c5 88%, transparent);
+  border-radius: 999px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 108px 22px 1fr;
+  gap: 0 22px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-year {
+  text-align: right;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: #7db7ff;
+  padding-top: 3px;
+  letter-spacing: 0.04em;
+}
+
+.timeline-item.active .timeline-year {
+  color: #19d3c5;
+}
+
+.timeline-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #57a1ff;
+  border: 3px solid #060816;
+  box-shadow: 0 0 0 2px #57a1ff, 0 0 12px rgba(87, 161, 255, 0.4);
+  margin-top: 3px;
+  justify-self: center;
+  flex-shrink: 0;
+  transition: box-shadow 0.3s ease;
+}
+
+.timeline-item.active .timeline-dot {
+  background: #19d3c5;
+  box-shadow: 0 0 0 2px #19d3c5, 0 0 18px rgba(25, 211, 197, 0.55);
+}
+
+.timeline-content {
+  padding-bottom: 4px;
+}
+
+.timeline-content h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+  color: #eef4ff;
+  margin-bottom: 6px;
+  text-align: left;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.timeline-content p {
+  color: #c4d4ee;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+
+body.light-mode .timeline-content h3 {
+  color: #0f172a;
+}
+
+body.light-mode .timeline-content p {
+  color: var(--text-muted-light);
+}
+
+body.light-mode .timeline-year {
+  color: #2563eb;
+}
+
+@media (max-width: 560px) {
+  .timeline::before { left: 72px; }
+  .timeline-item { grid-template-columns: 72px 20px 1fr; gap: 0 14px; }
+  .timeline-year { font-size: 0.8rem; }
+}
+
 /* ========== Certificates ========== */
 .certificates-grid {
   display: grid;

@@ -128,9 +128,10 @@ const translations = {
     heroCardBadge: 'Portfolio 2026',
     heroCardTitle: 'Building interfaces that feel premium',
     heroCardDesc: 'React-driven projects, practical API work, and thoughtful UI polish.',
-    sectionEyebrows: ['About', 'Capabilities', 'Selected Work', 'Proof', 'Contact'],
+    sectionEyebrows: ['About', 'Journey', 'Capabilities', 'Selected Work', 'Proof', 'Contact'],
     sectionTitles: [
       'A focused builder with a product mindset',
+      'How I got here',
       'Skills and expertise',
       'Projects that show range and finish',
       'Certificates',
@@ -143,7 +144,7 @@ const translations = {
     aboutCards: {
       titles: ['Education', 'Goal', 'Passion'],
       desc: [
-        'University of Transport - Information Technology',
+        'University of Transport Ho Chi Minh City',
         'Become a reliable full-stack developer',
         'Building products people actually want to use'
       ]
@@ -207,9 +208,10 @@ const translations = {
     heroCardBadge: 'Portfolio 2026',
     heroCardTitle: 'Xây dựng giao diện mang cảm giác cao cấp',
     heroCardDesc: 'Dự án hướng React, tích hợp API thực tế và trải nghiệm UX/UI.',
-    sectionEyebrows: ['Giới thiệu', 'ăng lực', 'Dự án nổi bật', 'Minh chứng', 'Liên hệ'],
+    sectionEyebrows: ['Giới thiệu', 'Hành trình', 'Năng lực', 'Dự án nổi bật', 'Minh chứng', 'Liên hệ'],
     sectionTitles: [
       'Một người xây dựng tập trung và có tư duy sản phẩm',
+      'Con đường tôi đã đi',
       'Kỹ năng và chuyên môn',
       'Dự án thể hiện độ rộng và độ chuẩn',
       'Chứng chỉ',
@@ -222,7 +224,7 @@ const translations = {
     aboutCards: {
       titles: ['Học vấn', 'Mục tiêu', 'Đam mê'],
       desc: [
-        'Đại học Giao thông Vận tải - Công nghệ Thông tin chuyên ngành Công Nghệ Phần Mềm',
+        'Đại học Giao thông Vận tải TP.HCM',
         'Trở thành lập trình viên full-stack đáng tin cậy',
        'Xây dựng sản phẩm mà người dùng thực sự muốn sử dụng'
       ]
