@@ -1531,6 +1531,7 @@ body.light-mode .project-title {
   color: var(--text-muted-dark);
   line-height: 1.7;
   margin: 0;
+  white-space: pre-line;
 }
 
 body.light-mode .project-description {

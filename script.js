@@ -119,7 +119,7 @@ const translations = {
     contactBtn: 'Contact',
     downloadCv: 'Download CV',
     homeEyebrow: 'Software Engineer · Full-Stack Developer',
-    heroSubtitle: 'Full-Stack Developer',
+    heroSubtitle: 'Software Engineer & Full-Stack Developer',
     heroDescription: 'I design and build polished web experiences with strong front-end details, practical back-end thinking, and a focus on shipping useful products.',
     heroActions: ['See Selected Work', 'Start a Conversation'],
     heroMarquee: ['UI systems', 'React builds', 'Fast prototypes', 'API integration', 'Clean handoff'],
@@ -174,11 +174,14 @@ const translations = {
       'Adjust quickly when requirements or tools change.',
       'Stay on schedule without losing quality.'
     ],
-    projectBadges: ['Featured', 'E-commerce'],
-    projectTitles: ['Weather App', 'Perfume Shop'],
+    projectBadges: ['Featured', 'E-commerce', 'SaaS', 'Mobile App', 'AI/LLM'],
+    projectTitles: ['Weather App', 'Perfume Shop', 'Task Management Workspace', 'StudyMate', 'AI Log Anomaly Detection'],
     projectDescriptions: [
       'A React-based weather forecast app using OpenWeatherMap API with a clean, fast interface.',
-      'An e-commerce website for fragrance lovers to browse premium products through a sleek React interface.'
+      'An e-commerce website for fragrance lovers to browse premium products through a sleek React interface.',
+      'A full-stack task management platform designed for productivity and scalability. It features a secure REST API and an interactive React dashboard for managing tasks in real time.',
+      '"Plan smarter. Study better. Never miss a deadline."\n\nA mobile productivity app that helps students manage subjects, assignments, and deadlines efficiently.',
+      'An unsupervised machine learning system that detects anomalies in HDFS logs using feature-engineered signals and real-time monitoring.'
     ],
     projectButtons: ['Live Demo', 'GitHub'],
     certificateTitle: 'Coming soon',
@@ -187,6 +190,20 @@ const translations = {
     sendMessage: 'Send Message',
     antiBotLabel: 'Do not fill this out if you\'re human:',
     footer: 'Tuan Nguyen. All rights reserved.',
+    timelineTitles: [
+      'Started University',
+      'First Real Projects',
+      'Going Full-Stack',
+      'Mobile & AI',
+      'Open to Opportunities'
+    ],
+    timelineDescs: [
+      'Enrolled in Software Engineering at University of Transport Ho Chi Minh City. Began exploring web fundamentals, algorithms, and programming foundations.',
+      'Picked up React and Node.js. Built the Weather App and Perfume Shop — first time shipping something to production with a real API.',
+      'Built the Task Management Workspace — a full REST API with React dashboard, MongoDB, TypeScript, and GitHub Actions CI/CD pipeline.',
+      'Shipped StudyMate on Flutter + Firebase. Built an unsupervised ML system for HDFS log anomaly detection using Python, FastAPI, MLFlow, and Docker.',
+      'Final year student seeking internship or junior roles. Ready to contribute to real teams, ship real products, and keep pushing the craft forward.'
+    ],
     quote: '"Being a developer isn\'t about knowing everything - it\'s about learning quickly, adapting constantly, and delivering with purpose."'
   },
   vi: {
@@ -198,67 +215,87 @@ const translations = {
     nav: ['Trang chủ', 'Giới thiệu', 'Kỹ năng', 'Dự án'],
     contactBtn: 'Liên hệ',
     downloadCv: 'Tải CV',
-    homeEyebrow: 'Sẵn sàng cho công việc thực tập toàn thời gian',
-    heroSubtitle: 'Lập trình viên Full-Stack',
-      heroDescription: 'Tôi thiết kế và xây dựng trải nghiệm web chú trọng vào UI chuyên nghiệp, tư duy backend thực tế và tập trung vào giá trị sản phẩm.',
-    heroActions: ['Xem dự án tiêu biểu', 'Bắt đầu trò chuyện'],
-    heroMarquee: ['Hệ thống UI', 'Dự án React', 'Prototype nhanh', 'Tích hợp API', 'Giao diện gọn gàng'],
+    homeEyebrow: 'Kỹ sư phần mềm · Lập trình viên Full-Stack',
+    heroSubtitle: 'Kỹ sư phần mềm & Lập trình viên Full-Stack',
+    heroDescription: 'Tôi thiết kế và phát triển các sản phẩm web với sự cân bằng giữa trải nghiệm người dùng, tư duy backend thực tiễn và chất lượng triển khai.',
+    heroActions: ['Xem dự án nổi bật', 'Liên hệ với tôi'],
+    heroMarquee: [
+      'Hệ thống UI',
+      'Dự án React',
+      'Prototype nhanh',
+      'Tích hợp API',
+      'Giao diện chỉn chu'
+    ],
     heroStatsStrong: ['5', 'Full-stack', 'UI-first'],
-    heroStatsDesc: ['Dự án', 'React, Node, Python', 'Giao diện tối ưu, responsive'],
+    heroStatsDesc: [
+      'Dự án',
+      'React, Node.js, Python',
+      'Giao diện tối ưu và responsive'
+    ],
     heroCardBadge: 'Portfolio 2026',
-    heroCardTitle: 'Xây dựng giao diện mang cảm giác cao cấp',
-    heroCardDesc: 'Dự án hướng React, tích hợp API thực tế và trải nghiệm UX/UI.',
-    sectionEyebrows: ['Giới thiệu', 'Hành trình', 'Năng lực', 'Dự án nổi bật', 'Minh chứng', 'Liên hệ'],
+    heroCardTitle: 'Xây dựng những giao diện chỉn chu và chuyên nghiệp',
+    heroCardDesc: 'Các dự án sử dụng React, tích hợp API thực tế và chú trọng đến trải nghiệm người dùng.',
+    sectionEyebrows: ['Giới thiệu', 'Hành trình', 'Năng lực', 'Dự án nổi bật', 'Chứng chỉ', 'Liên hệ'],
     sectionTitles: [
-      'Một người xây dựng tập trung và có tư duy sản phẩm',
-      'Con đường tôi đã đi',
+      'Một lập trình viên với tư duy sản phẩm',
+      'Hành trình phát triển',
       'Kỹ năng và chuyên môn',
-      'Dự án thể hiện độ rộng và độ chuẩn',
-      'Chứng chỉ',
+      'Dự án nổi bật',
+      'Chứng chỉ & Chứng nhận',
       'Liên hệ với tôi'
     ],
     aboutTexts: [
-      'Tôi là sinh viên CNTT có sự yêu thích trong việc tạo ra các giao diện dễ sử dụng. Công việc của tôi là giao điểm giữa thiết kế giao diện đẹp và triển khai hệ thống một cách chắc chắn, an toàn để đảm bảo sự an toàn cho hệ thống.',
-      'Tôi đang tìm cơ hội thực tập để đóng góp vào sản phẩm thực tế, học hỏi từ đội ngũ mạnh hơn và tiếp tục nâng cấp bộ kỹ năng full-stack.'
+      'Tôi là một kỹ sư phần mềm tập trung vào việc biến ý tưởng thành những sản phẩm hoàn thiện và dễ sử dụng. Công việc của tôi là sự kết hợp giữa thiết kế giao diện trực quan, kiến trúc backend vững chắc và tinh thần luôn hướng đến những giải pháp có giá trị thực tế.',
+      'Tôi phát triển các ứng dụng web và mobile theo định hướng Full-Stack, chú trọng vào trải nghiệm người dùng, mã nguồn dễ bảo trì và khả năng ứng dụng trong thực tế — từ các nền tảng thương mại điện tử đến các hệ thống giám sát ứng dụng AI.'
     ],
     aboutCards: {
       titles: ['Học vấn', 'Mục tiêu', 'Đam mê'],
       desc: [
         'Đại học Giao thông Vận tải TP.HCM',
-        'Trở thành lập trình viên full-stack đáng tin cậy',
-       'Xây dựng sản phẩm mà người dùng thực sự muốn sử dụng'
+        'Trở thành lập trình viên Full-Stack đáng tin cậy',
+        'Xây dựng những sản phẩm mà người dùng thực sự muốn sử dụng'
       ]
     },
-    skillsIntro: 'Sự kết hợp thực tế giữa frontend, backend và tư duy giải quyết vấn đề, được trình bày bằng Bento Grid gọn gàng để dễ quét CV.',
-    skillBadges: ['Nền tảng Frontend', 'Backend', 'Script', 'Hệ thống UI', 'Đảm bảo an toàn dữ liệu', 'Cơ sở dữ liệu'],
-    skillNotes: ['Stack chính', 'Logic API', 'Giải quyết vấn đề', 'Trau chuốt hình ảnh', 'Mã nguồn ổn định', 'Lưu trữ dữ liệu'],
+    skillsIntro: 'Những công nghệ dưới đây được tôi sử dụng trong quá trình xây dựng các dự án thực tế. Mỗi công cụ đều gắn liền với những sản phẩm tôi đã phát triển và triển khai.',
+    skillBadges: [
+      'Frontend',
+      'Backend',
+      'Scripting',
+      'UI System',
+      'Type Safety',
+      'Cơ sở dữ liệu'
+    ],
+    skillNotes: ['Stack chính', 'Logic API', 'Giải quyết vấn đề', 'Trau chuốt giao diện', 'Mã nguồn tin cậy', 'Lưu trữ dữ liệu'],
     skillTitles: ['React', 'Node.js', 'Python', 'Tailwind CSS', 'TypeScript', 'MongoDB'],
     skillDescriptions: [
-      'Thành phần UI tái sử dụng tập trung vào giao diện responsive.',
-      'Xây dựng REST API và tính năng phía server.',
-      'Viết script nhanh cho tự động hóa và phân tích.',
-      'Tăng tốc thiết kế với utility-first approach.',
-      'JavaScript an toàn hơn cho dự án front-end mở rộng.',
-      'Lưu trữ dữ liệu dạng document linh hoạt.'
+      'Xây dựng các thành phần UI có thể tái sử dụng và tối ưu cho nhiều kích thước màn hình.',
+      'Phát triển REST API và các tính năng phía máy chủ.',
+      'Viết script phục vụ tự động hóa và xử lý dữ liệu.',
+      'Tăng tốc phát triển giao diện với phương pháp utility-first.',
+      'Nâng cao độ an toàn và khả năng mở rộng cho dự án JavaScript.',
+      'Lưu trữ dữ liệu linh hoạt theo mô hình document.'
     ],
     skillTags: ['Hooks', 'SPA', 'Express', 'REST', 'Tự động hóa', 'Dữ liệu', 'Design tokens', 'Responsive', 'Types', 'DX', 'Collections', 'CRUD'],
     softSkillsTitle: 'Kỹ năng mềm',
     softSkillTitles: ['Giải quyết vấn đề', 'Lãnh đạo nhóm', 'Giao tiếp', 'Quản lý dự án', 'Hướng dẫn', 'Tư duy sáng tạo', 'Thích nghi', 'Quản lý thời gian'],
     softSkillDesc: [
-      'Phân tích vấn đề và đưa ra hướng xử lý phù hợp trong thực tế.',
-      'Giữ công việc rõ ràng, đồng bộ và đi đúng mục tiêu chung.',
-      'Trình bày ý tưởng rõ ràng cho cả đội kỹ thuật và phi kỹ thuật.',
-      'Sắp xếp công việc, ưu tiên và theo dõi tiến độ hiệu quả.',
-      'Chủ động chia sẻ kiến thức và hỗ trợ các thành viên trong nhóm.',
-      'Luôn tìm cách tối ưu để sản phẩm gọn gàng và dễ sử dụng hơn.',
-      'Thích nghi nhanh với thay đổi về yêu cầu hoặc công nghệ.',
-      'Đảm bảo tiến độ nhưng vẫn giữ chất lượng công việc.'
+      'Phân tích vấn đề và đưa ra giải pháp hiệu quả.',
+      'Duy trì sự phối hợp và định hướng rõ ràng trong nhóm.',
+      'Trình bày ý tưởng dễ hiểu cho cả đối tượng kỹ thuật và phi kỹ thuật.',
+      'Quản lý công việc, tiến độ và mức độ ưu tiên một cách khoa học.',
+      'Chủ động chia sẻ kiến thức và hỗ trợ đồng đội phát triển.',
+      'Luôn tìm kiếm những giải pháp tối ưu và thân thiện với người dùng.',
+      'Thích nghi nhanh với những thay đổi về yêu cầu hoặc công nghệ.',
+      'Đảm bảo tiến độ mà vẫn duy trì chất lượng sản phẩm.'
     ],
-    projectBadges: ['Nổi bật', 'Thương mại điện tử'],
-    projectTitles: ['Ứng dụng thời tiết', 'Cửa hàng nước hoa'],
+    projectBadges: ['Nổi bật', 'Thương mại điện tử', 'SaaS', 'Ứng dụng di động', 'AI/LLM'],
+    projectTitles: ['Weather App', 'Perfume Shop', 'Task Management Workspace', 'StudyMate', 'AI Log Anomaly Detection'],
     projectDescriptions: [
-      'Ứng dụng dự báo thời tiết bằng React, sử dụng OpenWeatherMap API với giao diện gọn, nhanh.',
-      'Website thương mại điện tử dành cho người yêu nước hoa, duyệt sản phẩm cao cấp qua giao diện React hiện đại.'
+      'Ứng dụng dự báo thời tiết được xây dựng bằng React, sử dụng OpenWeatherMap API với giao diện trực quan và tốc độ phản hồi nhanh.',
+      'Website thương mại điện tử dành cho những người yêu thích nước hoa, mang đến trải nghiệm khám phá sản phẩm cao cấp thông qua giao diện React hiện đại.',
+      'Nền tảng quản lý công việc Full-Stack được xây dựng hướng đến hiệu suất và khả năng mở rộng. Hệ thống cung cấp REST API bảo mật cùng React Dashboard tương tác, cho phép quản lý công việc theo thời gian thực.',
+      '"Lập kế hoạch thông minh hơn. Học tập hiệu quả hơn. Không bỏ lỡ bất kỳ thời hạn quan trọng nào."\n\nỨng dụng di động hỗ trợ sinh viên quản lý môn học, bài tập và thời hạn hoàn thành một cách hiệu quả.',
+      'Hệ thống Machine Learning không giám sát giúp phát hiện bất thường trong log HDFS thông qua các đặc trưng dữ liệu được xây dựng thủ công và cơ chế giám sát theo thời gian thực.'
     ],
     projectButtons: ['Xem demo', 'GitHub'],
     certificateTitle: 'Sắp cập nhật',
@@ -267,7 +304,21 @@ const translations = {
     sendMessage: 'Gửi tin nhắn',
     antiBotLabel: 'Nếu bạn là người, vui lòng để trống ô này:',
     footer: 'Tuan Nguyen. Bảo lưu mọi quyền.',
-    quote: '"Làm lập trình viên không phải là biết hết mọi thứ - mà là học nhanh, thích nghi liên tục và tạo ra giá trị thực sự."'
+    timelineTitles: [
+      'Bắt đầu học Đại học',
+      'Dự án thực tế đầu tiên',
+      'Phát triển Full-Stack',
+      'Lập trình Di động & AI',
+      'Sẵn sàng đón nhận cơ hội'
+    ],
+    timelineDescs: [
+      'Nhập học ngành Kỹ thuật Phần mềm tại Đại học Giao thông Vận tải TP.HCM. Bắt đầu tìm hiểu kiến thức web nền tảng, thuật toán và tư duy lập trình.',
+      'Học hỏi React và Node.js. Xây dựng ứng dụng Thời tiết và Cửa hàng Nước hoa — bước đầu đưa sản phẩm tích hợp API thực tế lên môi trường production.',
+      'Xây dựng Task Management Workspace — nền tảng quản lý công việc full-stack với REST API, React dashboard, MongoDB, TypeScript và quy trình CI/CD qua GitHub Actions.',
+      'Hoàn thiện ứng dụng di động StudyMate (Flutter + Firebase). Xây dựng hệ thống AI phát hiện bất thường log HDFS sử dụng học máy không giám sát với Python, FastAPI, MLflow và Docker.',
+      'Sinh viên năm cuối tìm kiếm vị trí thực tập hoặc Junior. Sẵn sàng đóng góp cùng đội ngũ phát triển, xây dựng sản phẩm thực tế và không ngừng nâng cao tay nghề.'
+    ],
+    quote: '"Làm lập trình viên không phải là biết mọi thứ — mà là khả năng học hỏi nhanh, thích nghi liên tục và tạo ra giá trị thực sự."'
   }
 };
 
@@ -361,6 +412,9 @@ function applyLanguage(lang) {
   setAllText('.about-me-cards .info-card-content h4', t.aboutCards.titles);
   setAllText('.about-me-cards .info-card-content p', t.aboutCards.desc);
 
+  setAllText('.timeline-content h3', t.timelineTitles);
+  setAllText('.timeline-content p', t.timelineDescs);
+
   setText('.skills-intro p', t.skillsIntro);
   setAllText('.skills-bento-grid .skill-badge', t.skillBadges);
   setAllText('.skills-bento-grid .skill-note', t.skillNotes);
@@ -375,8 +429,11 @@ function applyLanguage(lang) {
   setAllText('.project-card .project-badge', t.projectBadges);
   setAllText('.project-card .project-title', t.projectTitles);
   setAllText('.project-card .project-description', t.projectDescriptions);
-  setAllText('.project-card .btn.live', [t.projectButtons[0], t.projectButtons[0]]);
-  setAllText('.project-card .btn.github', [t.projectButtons[1], t.projectButtons[1]]);
+  const liveButtons = Array.from(document.querySelectorAll('.project-card .btn.live'));
+  liveButtons.forEach(btn => btn.textContent = t.projectButtons[0]);
+
+  const githubButtons = Array.from(document.querySelectorAll('.project-card .btn.github'));
+  githubButtons.forEach(btn => btn.textContent = t.projectButtons[1]);
 
   setText('.certificate-item h3', t.certificateTitle);
   setText('.certificate-item p', t.certificateDesc);
