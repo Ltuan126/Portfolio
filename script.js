@@ -192,17 +192,17 @@ const translations = {
     footer: 'Tuan Nguyen. All rights reserved.',
     timelineTitles: [
       'Started University',
+      'Learning Fundamentals',
       'First Real Projects',
-      'Going Full-Stack',
-      'Mobile & AI',
+      'Going Full-Stack, Mobile & AI',
       'Open to Opportunities'
     ],
     timelineDescs: [
-      'Enrolled in Software Engineering at University of Transport Ho Chi Minh City. Began exploring web fundamentals, algorithms, and programming foundations.',
-      'Picked up React and Node.js. Built the Weather App and Perfume Shop — first time shipping something to production with a real API.',
-      'Built the Task Management Workspace — a full REST API with React dashboard, MongoDB, TypeScript, and GitHub Actions CI/CD pipeline.',
-      'Shipped StudyMate on Flutter + Firebase. Built an unsupervised ML system for HDFS log anomaly detection using Python, FastAPI, MLFlow, and Docker.',
-      'Final year student seeking internship or junior roles. Ready to contribute to real teams, ship real products, and keep pushing the craft forward.'
+      'Enrolled in Software Engineering at University of Transport Ho Chi Minh City. Began exploring programming foundations and algorithms.',
+      'Focused on computer science fundamentals, data structures, and web development basics (HTML, CSS, JavaScript).',
+      'Learned React and Node.js. Built and deployed the Weather App and Perfume Shop, integrating real-world APIs for the first time.',
+      'Built Task Management Workspace (React, MongoDB, TS, CI/CD), shipped StudyMate (Flutter + Firebase), and built an unsupervised ML system for HDFS log anomaly detection.',
+      'Third-year student seeking internship or fresher roles. Ready to contribute to real teams, ship real products, and keep pushing the craft forward.'
     ],
     quote: '"Being a developer isn\'t about knowing everything - it\'s about learning quickly, adapting constantly, and delivering with purpose."'
   },
@@ -306,17 +306,17 @@ const translations = {
     footer: 'Tuan Nguyen. Bảo lưu mọi quyền.',
     timelineTitles: [
       'Bắt đầu học Đại học',
+      'Học kiến thức nền tảng',
       'Dự án thực tế đầu tiên',
-      'Phát triển Full-Stack',
-      'Lập trình Di động & AI',
+      'Full-Stack, Di động & AI',
       'Sẵn sàng đón nhận cơ hội'
     ],
     timelineDescs: [
-      'Nhập học ngành Kỹ thuật Phần mềm tại Đại học Giao thông Vận tải TP.HCM. Bắt đầu tìm hiểu kiến thức web nền tảng, thuật toán và tư duy lập trình.',
-      'Học hỏi React và Node.js. Xây dựng ứng dụng Thời tiết và Cửa hàng Nước hoa — bước đầu đưa sản phẩm tích hợp API thực tế lên môi trường production.',
-      'Xây dựng Task Management Workspace — nền tảng quản lý công việc full-stack với REST API, React dashboard, MongoDB, TypeScript và quy trình CI/CD qua GitHub Actions.',
-      'Hoàn thiện ứng dụng di động StudyMate (Flutter + Firebase). Xây dựng hệ thống AI phát hiện bất thường log HDFS sử dụng học máy không giám sát với Python, FastAPI, MLflow và Docker.',
-      'Sinh viên năm cuối tìm kiếm vị trí thực tập hoặc Junior. Sẵn sàng đóng góp cùng đội ngũ phát triển, xây dựng sản phẩm thực tế và không ngừng nâng cao tay nghề.'
+      'Nhập học chuyên ngành Kỹ thuật Phần mềm tại Đại học Giao thông Vận tải TP.HCM. Bắt đầu tiếp cận các kiến thức lập trình cơ bản và thuật toán.',
+      'Tập trung tích lũy kiến thức khoa học máy tính, cấu trúc dữ liệu, giải thuật và nền tảng phát triển web (HTML, CSS, JavaScript).',
+      'Làm quen với React và Node.js. Xây dựng và triển khai Weather App cùng Perfume Shop, lần đầu tiên đưa sản phẩm thực tế tích hợp API lên môi trường production.',
+      'Phát triển Task Management Workspace (React, MongoDB, TS, CI/CD), hoàn thiện ứng dụng StudyMate (Flutter & Firebase) và xây dựng hệ thống AI phát hiện bất thường log HDFS (Python, FastAPI, MLflow, Docker).',
+      'Sinh viên năm 3 đang tìm kiếm cơ hội Internship hoặc Fresher Developer. Sẵn sàng tham gia vào các dự án thực tế, đóng góp cho đội ngũ phát triển và tiếp tục hoàn thiện kỹ năng chuyên môn.'
     ],
     quote: '"Làm lập trình viên không phải là biết mọi thứ — mà là khả năng học hỏi nhanh, thích nghi liên tục và tạo ra giá trị thực sự."'
   }
