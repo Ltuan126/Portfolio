@@ -4,33 +4,33 @@ Personal developer portfolio built with static web technologies.
 
 ## Overview
 
-This project is a single-page portfolio site that highlights:
+This is a single-page portfolio in an editorial / index-style design:
 
-- Personal introduction and hero section
-- About section
-- Skills and capability cards
-- Project showcase
-- Contact form and social links
-- Language toggle (English / Vietnamese)
-- Fullscreen looping video background for cinematic depth
+- Fixed left rail navigation with numbered sections and active-section highlight
+- Hero with oversized serif name, portrait, and quick facts
+- Selected work list (featured project card + numbered rows)
+- Capability index (skills table) and soft-skill strip
+- Build log (journey timeline)
+- Profile section with pull quote
+- Contact section with Netlify-powered form and social links
+- Language toggle (English / Vietnamese), scroll progress bar, reveal-on-scroll animations
 
 ## Tech Stack
 
 - HTML5
-- CSS3
+- CSS3 (no framework)
 - JavaScript (vanilla)
-- Font Awesome icons
+- Fonts: Source Serif 4, Manrope, IBM Plex Mono (Google Fonts)
 
 ## Current Project Structure
 
 ```text
 .
-├── assets/
-├── images/
+├── assets/          # CV PDF
+├── images/          # Portrait + project screenshots
 ├── index.html
 ├── script.js
 ├── style.css
-├── thank-you.html
 └── README.md
 ```
 
@@ -39,17 +39,15 @@ This project is a single-page portfolio site that highlights:
 Because this is a static website, you can run it in one of these ways:
 
 1. Open index.html directly in your browser.
-2. Or use VS Code Live Server for better local testing.
+2. Or serve it locally, e.g. `npx http-server . -p 8123`.
 
-## Recent Update
+## Contact Form
 
-The site now uses a fullscreen background video element with:
+The form uses [Web3Forms](https://web3forms.com): submissions are sent by AJAX
+to `https://api.web3forms.com/submit` and forwarded straight to the owner's
+email inbox. Works on any static hosting (GitHub Pages, Vercel, Netlify).
 
-- autoplay
-- loop
-- muted
-- preload="metadata"
-
-Video source:
-
-[Background video source](https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4)
+Setup: get a free access key at https://web3forms.com (enter your email, the
+key arrives in your inbox), then replace `YOUR_WEB3FORMS_ACCESS_KEY` in the
+hidden `access_key` input in `index.html`. A hidden `botcheck` checkbox acts
+as the spam honeypot.
