@@ -12,7 +12,7 @@ This is a single-page portfolio in an editorial / index-style design:
 - Capability index (skills table) and soft-skill strip
 - Build log (journey timeline)
 - Profile section with pull quote
-- Contact section with Netlify-powered form and social links
+- Contact section with a Web3Forms-powered form and social links
 - Language toggle (English / Vietnamese), scroll progress bar, reveal-on-scroll animations
 
 ## Tech Stack
@@ -48,6 +48,7 @@ to `https://api.web3forms.com/submit` and forwarded straight to the owner's
 email inbox. Works on any static hosting (GitHub Pages, Vercel, Netlify).
 
 Setup: get a free access key at https://web3forms.com (enter your email, the
-key arrives in your inbox), then replace `YOUR_WEB3FORMS_ACCESS_KEY` in the
-hidden `access_key` input in `index.html`. A hidden `botcheck` checkbox acts
-as the spam honeypot.
+key arrives in your inbox), then set it as the hidden `access_key` input in
+`index.html` — this repo already has a live key configured, so no setup is
+needed to run it as-is. A hidden `botcheck` checkbox acts as the spam
+honeypot.
