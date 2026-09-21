@@ -414,3 +414,15 @@ body { background: var(--surface); color: var(--ink); }
   color: #b7c4d5;
   max-width: none;
 }
+
+.work-row-featured .work-title { color: var(--ink); }
+.work-row-featured .work-badge {
+  color: #2f5fbd;
+  background: #e6eefb;
+  border-color: #c8d8f2;
+}
+.work-row-featured .work-featured-copy .work-desc { color: #2c3e56; }
+.work-row-featured .work-stack-row span {
+  color: #5c7291;
+  background: var(--surface-alt);
+}
