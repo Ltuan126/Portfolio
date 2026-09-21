@@ -410,8 +410,9 @@ body { background: var(--surface); color: var(--ink); }
   color: var(--ink);
 }
 .footer {
-  background: var(--ink);
-  color: #b7c4d5;
+  background: var(--surface-alt);
+  color: #6f84a3;
+  border-top: 1px solid var(--line);
   max-width: none;
 }
 
